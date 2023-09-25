@@ -45,7 +45,9 @@ ul li:hover {
     color: white;
 }
 
-
+.fa-user{
+    font-size: 1.4rem;
+}
 
 
 
@@ -54,7 +56,7 @@ ul li:hover {
 
 
 
-#Portada {
+#SectionPortada {
     padding-top: 0;
     /* Modificacion para poder desplazar la card al cargar la web */
     position: relative;
@@ -66,7 +68,7 @@ ul li:hover {
     align-items: center;
     background-color: var(--color-fondoClaro);
     width: 100%;
-    height: calc(100vh - 65px );
+    height: calc(100vh - 65px);
 }
 
 /* Contenedor del div con img JS y div texto */
@@ -170,51 +172,95 @@ section {
     background-color: var(--color-fondoClaro);
 }
 
-/*DIV Y TIT:
-EJEMPLOS REALIZADOS EN JAVASCRIPT
-Algunos de los mencionados anteriormente */
+
+
+/* *************************************************************************************************************************
+CARROUSEL **********************************************************************************************************  */
+
+/* Div: h1: Ej realizados en js h2: algunos de los mencionados anteriormente */
 .divTitulos {
     padding: 15px 70px;
     border-radius: 4px;
     background-color: rgb(100, 99, 99);
     text-align: center;
     box-shadow: 10px 10px 15px;
-    margin-bottom: 40px;
 }
 
-#Carrousel h1 {
+#SectionCarrousel h1 {
     font-family: var(--letra-titulos);
     color: var(--color-amarillo);
     font-size: 1.5rem;
     margin-bottom: 2px;
 }
 
-#Carrousel h2 {
+#SectionCarrousel h2 {
     font-family: var(--letra-parrafos);
     font-size: 1.2rem;
     color: var(--color-parrafosGrisClaro);
 }
 
+/* titulo con el nombre del ejemplo en js : Carrousel de imagenes */
 .divTituloEjemplos {
+    margin-top: 40px;
     padding: 10px 20px;
     border-radius: 4px;
     background-color: rgb(100, 99, 99);
     box-shadow: 10px 10px 15px;
     text-align: start;
     line-height: 1.3rem;
-    margin-bottom: 50px;
 }
 
-/* ESTILO PARA EL TITULO DE CADA EJEMPLO: CARROUSEL, FORM, ANIMACION JS,etc */
-.divTituloEjemplos h2 {
-    font-family: var(--letra-parrafos);
-    font-size: 1.2rem;
-    color: var(--color-parrafosGrisClaro);
+
+.carouselContenedor {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* *************************************************************************************************************************
-CARROUSEL **********************************************************************************************************  */
 
+/* *posición del div como relativa, lo que permite posicionar elementos secundarios (btns)
+dentro de el de manera relativa a su posicion original. 
+ *display: inline-block; Hace que el div se comporte como un bloque en linea, lo que significa que se ajustará 
+al contenido pero seguirá siendo un bloque. */
+.divImgCarrousel {
+    position: relative;
+    display: inline-block;
+
+}
+
+#imagen {
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 90vh;
+    border: solid 3px yellow;
+    box-shadow: 12px 12px 12px;
+
+}
+
+button {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.btnAnterior {
+    left: 10px;
+    border-radius: 50%;
+    padding: 6px 12px;
+
+}
+
+.btnSiguiente {
+    right: 10px;
+    border-radius: 50%;
+    padding: 6px 12px;
+}
 
 
 /* ------------------------------------     SECCION FORMULARIO    -------------------------------*/

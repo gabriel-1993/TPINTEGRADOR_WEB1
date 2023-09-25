@@ -7,6 +7,9 @@
     <title>TP3 Gabriel Torrez</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./animaciones.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+         crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 </head>
 
@@ -15,12 +18,12 @@
         <img src="./logojs.png" alt="logoJavaScript">
         <ul>
             <li>Inicio</li>
-            <li>Mas info</li>
-            <li>Registrarse</li>
-            <li>Iniciar Sesion</li>
+            <li>Mas funciones</li>
+            <a href="./usuario.html"> <i class="fa-regular fa-user" style="color: #11052e;"></i></a>
+           
         </ul>
     </header>
-    <section id="Portada">
+    <section id="SectionPortada">
         <div class="divContenedorPortada">
             <div class="divTexto">
                 <div class="textLeft">
@@ -53,13 +56,28 @@
             <div class="divImg"></div>
         </div>
     </section>
-  
-    <section id="Formulario">
+    <section id="SectionCarrousel">
+        <div class="divTitulos">
+            <h1>EJEMPLOS REALIZADOS EN JAVASCRIPT</h1>
+            <h2> Algunos de los mencionados anteriormente</h2>
+        </div>
         <div class="divTituloEjemplos">
-            <h2> Validar datos en formulario</h2>
+            <h2> Carrousel de imagenes</h2>
+        </div>
+        <div class="carouselContenedor">
+            <div class="divImgCarrousel">
+                <button class="btnAnterior"><i class="fa-solid fa-chevron-up fa-rotate-270 fa-2xs" style="color: #ffffff;"></i></button>
+                <img id="imagen" src="" alt="Imagen">
+                <button class="btnSiguiente"><i class="fa-solid fa-chevron-up fa-rotate-90 fa-2xs"
+                        style="color: #ffffff;"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="SectionMasInfo">
+        <div class="divTituloEjemplos">
         </div>
         <form>
-            
+
         </form>
     </section>
 
