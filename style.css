@@ -1,0 +1,223 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    /* scroll mas lento */
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color-amarillo: rgb(250, 229, 43);
+    --color-fondoClaro: rgba(128, 128, 128, 0.493);
+    --color-parrafosGrisClaro: rgb(197, 196, 196);
+    --color-fondoGrisOscuro: rgb(100, 99, 99);
+    --letra-titulos: monospace;
+    --letra-parrafos: 'Courier New', Courier, monospace;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    background-color: var(--color-amarillo);
+    box-shadow: 0px 10px 15px;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+ul li {
+    color: rgb(17, 5, 46);
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+ul li:hover {
+    color: white;
+}
+
+
+
+
+
+/* --------------------------------------------     SECTION PORTADA   -----------------------------------*/
+
+
+
+
+#Portada {
+    padding-top: 0;
+    /* Modificacion para poder desplazar la card al cargar la web */
+    position: relative;
+    overflow: hidden;
+    /* ----- continuo efecto en animaciones.css ------- */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-fondoClaro);
+    width: 100%;
+    height: calc(100vh - 65px );
+}
+
+/* Contenedor del div con img JS y div texto */
+.divContenedorPortada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+/* CARD QUE HABLA SOBRE JS */
+.divTexto {
+    display: flex;
+    gap: 50px;
+    width: 720px;
+    padding: 24px;
+    background-color: rgb(100, 99, 99);
+    border: solid 4px var(--color-amarillo);
+    border-right: 0;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 20px 10px 15px;
+}
+
+/* lado izquierdo titulos y parrafo */
+.textLeft {
+    width: 50%;
+}
+
+.textLeft h1,
+.textLeft h2 {
+    color: var(--color-amarillo);
+    font-size: 2rem;
+    font-family: var(--letra-titulos);
+}
+
+.textLeft h2 {
+    border-bottom: solid var(--color-amarillo) 2px;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+}
+
+/* mismos colores y tamaños para izq y der */
+.textLeft p,
+.textRight ol {
+    color: var(--color-parrafosGrisClaro);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+/* lado derecho titulos y parrafo */
+.textRight {
+    width: 50%;
+}
+
+.textRight h3,
+.textRight h4 {
+    color: var(--color-amarillo);
+    font-size: 1.54rem;
+    font-family: monospace;
+}
+
+.textRight h4 {
+    border-bottom: solid var(--color-amarillo) 2px;
+    margin-bottom: 20px;
+}
+
+/* paddin para ubicar los list style dentro del subrayado superior */
+.textRight ol {
+    padding: 0 15px;
+}
+
+.textRight ol li {
+    list-style: disc;
+}
+
+.divImg {
+    width: 400px;
+    height: 416px;
+    background-image: url(./jsPortada.png);
+    background-size: cover;
+    background-position: center;
+    border: solid 4px var(--color-amarillo);
+    border-left: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 10px 10px 15px;
+}
+
+/* ---------------------------------------   SECTION  CARROUSEL     -------------------------------------*/
+/* APLICO A TODOS LOS SECTION PARA CADA EJEMPLO */
+section {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-fondoClaro);
+}
+
+/*DIV Y TIT:
+EJEMPLOS REALIZADOS EN JAVASCRIPT
+Algunos de los mencionados anteriormente */
+.divTitulos {
+    padding: 15px 70px;
+    border-radius: 4px;
+    background-color: rgb(100, 99, 99);
+    text-align: center;
+    box-shadow: 10px 10px 15px;
+    margin-bottom: 40px;
+}
+
+#Carrousel h1 {
+    font-family: var(--letra-titulos);
+    color: var(--color-amarillo);
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+#Carrousel h2 {
+    font-family: var(--letra-parrafos);
+    font-size: 1.2rem;
+    color: var(--color-parrafosGrisClaro);
+}
+
+.divTituloEjemplos {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: rgb(100, 99, 99);
+    box-shadow: 10px 10px 15px;
+    text-align: start;
+    line-height: 1.3rem;
+    margin-bottom: 50px;
+}
+
+/* ESTILO PARA EL TITULO DE CADA EJEMPLO: CARROUSEL, FORM, ANIMACION JS,etc */
+.divTituloEjemplos h2 {
+    font-family: var(--letra-parrafos);
+    font-size: 1.2rem;
+    color: var(--color-parrafosGrisClaro);
+}
+
+/* *************************************************************************************************************************
+CARROUSEL **********************************************************************************************************  */
+
+
+
+/* ------------------------------------     SECCION FORMULARIO    -------------------------------*/
+/* APLICO A TODOS LOS SECTION PARA CADA EJEMPLO */
+/* SECTION FORMULARIO ESTILADO: AL COMIENDO DE LOS ESTILOS DE CARROUSEL */
+/* TITULO Validar datos en formulario ESTILADO EN CARROUSEL */

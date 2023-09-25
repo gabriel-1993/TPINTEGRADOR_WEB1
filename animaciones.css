@@ -1,0 +1,47 @@
+
+/* PORTADA CARD JS */
+
+/*EN STYLE.CSS prepare la section Portada para poder aplicar el efecto: 
+#Portada {
+    position: relative;
+    overflow: hidden;
+    ----- continuo efecto en animaciones.css -----*/
+
+.divTexto {
+    position: relative;
+    animation: slideRight 1.5s ease;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Desplazamiento completo a la derecha */
+    }
+}
+/* DESPLAZAMIENTO PARA IMG JS PORTADA */
+.divImg{
+    position: relative;
+    animation: slideTop 1.4s ease-in-out;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(150%);
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Desplazamiento completo a la derecha */
+    }
+}
+
+.textRight{
+    position: relative;
+    animation: slideRight 1.5s ease-in-out ;
+}
+
+/* -----------------------    FIN PORTADA   ------------------------ */
