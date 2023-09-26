@@ -404,3 +404,13 @@ align-items: center;
     font-weight: 900;
     font-size: 1.2rem;
 }
+
+/* Card para mostrar msjs con JS */
+.divMensaje{
+    display: none;
+    z-index: 3;
+    border: solid 2px black;
+    background-color: blue;
+    height: 250px;
+    width: 250px;
+}

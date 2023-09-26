@@ -26,19 +26,23 @@
         </nav>
     </header>
     <section id="usuarioSection">
+        <div class="divMensaje">
+
+        </div>
         <div class="usuarioDiv">
             <div class="divImgHola">
 
             </div>
 
             <div class="ingresarDiv">
-                <form>
+                <form id="ingresoForm">
                     <h2>Iniciar sesión</h2>
                     <label for="nombreIngresar">Usuario:</label>
-                    <input type="text" id="nombreIngresar" name="nombreIngresar"></input><label for="nombreIngresar"></label>
+                    <input type="text" id="nombreIngresar" name="nombreIngresar"></input><label
+                        for="nombreIngresar"></label>
                     <label for="passwordIngresar">Contraseña:</label>
                     <input type="password" id="passwordIngresar" name="passwordIngresar"></input>
-                 <input class="btnIngresar" type="submit" value="Ingresar"> </input> 
+                    <input class="btnIngresar" type="submit" value="Ingresar"> </input>
 
                 </form>
             </div>
@@ -46,7 +50,8 @@
                 <form>
                     <h2>Registrarse</h2>
                     <label for="nombreRegistro">Usuario:</label>
-                    <input type="text" id="nombreRegistro" name="nombreRegistro"></input><label for="nombreRegistro"></label>
+                    <input type="text" id="nombreRegistro" name="nombreRegistro"></input><label
+                        for="nombreRegistro"></label>
                     <label for="passwordRegistro">Contraseña:</label>
                     <input type="password" id="passwordRegistro" name="passwordRegistro"></input>
                     <label for="correoRegistro">E-mail:</label>
@@ -55,9 +60,13 @@
                 </form>
             </div>
         </div>
-    </section>
-    <footer class="footerUsuario"><h3>¡Regístrate ahora y únete a nuestra comunidad! </h3></footer>
 
+    </section>
+
+    <footer class="footerUsuario">
+        <h3>¡Regístrate ahora y únete a nuestra comunidad! </h3>
+    </footer>
+    <script src="./usuario.js" type="text/javascript"></script>
 </body>
 
 </html>

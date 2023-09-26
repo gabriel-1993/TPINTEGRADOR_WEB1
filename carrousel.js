@@ -1,4 +1,7 @@
-// CARROUSEL
+// CARROUSEL  ***********************************************************************************************************
+
+document.addEventListener("DOMContentLoaded", () => {
+
 // Lista con rutas de imagenes
 const listaImagenes = [
     './imagenesGrandes/1.jpg',
@@ -47,5 +50,11 @@ btnSiguiente.addEventListener('click', mostrarSiguiente);
 btnAnterior.addEventListener('click', mostrarAnterior);
 
 
-// VALIDAR FORMULARIO   -----------------------------------------------------------------------------
+
+    // llave,parentesis y ; del document.addEventListener("DOMContentLoaded", () => {  Principal para 
+    // ejecutar el js una vez este todo el html cargado...
+});
+
+
+
 
