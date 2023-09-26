@@ -276,7 +276,8 @@ button {
     justify-content: center;
     align-items: center;
     background-color: var(--color-fondoClaro);
-    height: calc(100vh - 65px);
+    /* height le resto 65 del header y 60 del footer */
+    height: calc(100vh - 105px);
     width: 100%;
 }
 
@@ -295,7 +296,7 @@ button {
 }
 
 .usuarioDiv:hover{
-    transform: scale(1.10); /* Escala el botón al 95% de su tamaño original */
+    transform: scale(1.02); /* Escala el botón al 95% de su tamaño original */
 }
 
 .divImgHola {
@@ -335,12 +336,13 @@ button {
 .btnIngresar, .btnRegistro {
     background-color: var(--color-amarillo);
     border: solid 2px var(--color-amarillo);
-    color: black;
     font-size: 1.2rem;
+    color: var(--color-fondoGrisOscuro);
     cursor: pointer;
     border-radius: 4px;
     margin-top: 40px;
     transition: transform 0.2s ease; 
+    font-weight: 600;
 }
 .btnRegistro{
     margin-top: 6px;
@@ -387,4 +389,18 @@ input:focus {
     justify-content: center;
     gap: 4px;
     height: 100%;
+}
+
+.footerUsuario{
+    height: 40px;
+    width: 100%;
+    background-color: var(--color-amarillo);
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+.footerUsuario h3{
+    font-family: var(--letra-parrafos);
+    font-weight: 900;
+    font-size: 1.2rem;
 }
