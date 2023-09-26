@@ -218,11 +218,12 @@ CARROUSEL **********************************************************************
     justify-content: center;
     align-items: center;
     height: 100vh;
-    transition: transform 0.2s ease; /* Transición suave para el efecto */
+    transition: transform 0.2s ease;
+    /* Transición suave para el efecto */
 }
 
-.carouselContenedor:hover{
-    transform: scale(1.08); 
+.carouselContenedor:hover {
+    transform: scale(1.08);
 }
 
 
@@ -285,18 +286,19 @@ button {
 .usuarioDiv {
     display: flex;
     justify-content: center;
-    width: min(85% , 900px);
+    width: min(85%, 900px);
     max-width: 1200px;
     height: 360px;
     border: solid 3px var(--color-amarillo);
     border-radius: 4px;
     box-shadow: 10px 10px 15px;
     background-color: var(--color-fondoGrisOscuro);
-    transition: transform 0.2s ease; 
+    transition: transform 0.2s ease;
 }
 
-.usuarioDiv:hover{
-    transform: scale(1.02); /* Escala el botón al 95% de su tamaño original */
+.usuarioDiv:hover {
+    transform: scale(1.02);
+    /* Escala el botón al 95% de su tamaño original */
 }
 
 .divImgHola {
@@ -333,7 +335,8 @@ button {
     height: 100%;
 }
 
-.btnIngresar, .btnRegistro {
+.btnIngresar,
+.btnRegistro {
     background-color: var(--color-amarillo);
     border: solid 2px var(--color-amarillo);
     font-size: 1.2rem;
@@ -341,15 +344,18 @@ button {
     cursor: pointer;
     border-radius: 4px;
     margin-top: 40px;
-    transition: transform 0.2s ease; 
+    transition: transform 0.2s ease;
     font-weight: 600;
 }
-.btnRegistro{
+
+.btnRegistro {
     margin-top: 6px;
 }
 
-.btnIngresar:hover, .btnRegistro:hover {
-    transform: scale(0.95); /* Escala el botón al 95% de su tamaño original */
+.btnIngresar:hover,
+.btnRegistro:hover {
+    transform: scale(0.95);
+    /* Escala el botón al 95% de su tamaño original */
     background-color: var(--color-amarillo);
     color: var(--color-fondoGrisOscuro);
 }
@@ -379,11 +385,12 @@ input:focus {
     padding: 15px;
     width: 30%;
 }
-.registrarseDiv h2{
+
+.registrarseDiv h2 {
     margin: 0;
 }
 
-.registrarseDiv form{
+.registrarseDiv form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -391,26 +398,66 @@ input:focus {
     height: 100%;
 }
 
-.footerUsuario{
+.footerUsuario {
     height: 40px;
     width: 100%;
     background-color: var(--color-amarillo);
     display: flex;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 }
-.footerUsuario h3{
+
+.footerUsuario h3 {
     font-family: var(--letra-parrafos);
     font-weight: 900;
     font-size: 1.2rem;
 }
 
-/* Card para mostrar msjs con JS */
-.divMensaje{
+/* Card para mostrar msjs si los datos ingresados son incorrectos o validos con JS */
+.divMensaje {
     display: none;
     z-index: 3;
-    border: solid 2px black;
-    background-color: blue;
-    height: 250px;
+    height: auto;
     width: 250px;
+    border: solid 4px var(--color-amarillo);
+    border-top: solid 20px var(--color-amarillo);
+    background-color: rgb(41, 40, 40);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+/* display block para mostrar el cartel agregandole esta class al div con js */
+.mostrarMsj {
+    display: flex;
+}
+
+.pMsj{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+/* Card Msj boton OK para cerrar el msj */
+.btnAceptar {
+    margin-top: 25px;
+    padding: 5px 50px;
+    background-color: var(--color-amarillo);
+    border-radius: 3px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.btnAceptar:hover{
+    color: var(--color-fondoGrisOscuro);
 }

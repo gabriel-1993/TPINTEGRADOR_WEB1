@@ -1,33 +1,42 @@
 // VALIDAR FORMULARIO INGRESO  ******************************************************************************************
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const formIngresar = document.getElementById("ingresoForm");
+    const nombreIngresar = document.getElementById("nombreIngresar");
+    const divMsj = document.querySelector(".divMensaje");
+    const btnIngresar = document.querySelector(".btnIngresar");
+    const btnMsjAceptar = document.querySelector(".btnAceptar");
 
-const nombreIngresar = document.getElementById("nombreIngresar");
+    // CreateElement  p: msj de error dentro del div
+    var pMsj = document.createElement("p");
+    //Agrego class pMsj para el css
+    pMsj.className = "pMsj";
+    //Agrego el texto del p
+    pMsj.textContent = "Por favor, ingrese un nombre de usuario";
+    //guardo dentro del divMsj el pMsj
+    divMsj.appendChild(pMsj);
 
-const divMsj = document.querySelector(".divMensaje");
+    formIngresar.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const nombre = nombreIngresar.value.trim();
+        if (nombre === "") {
+            // El campo esta vacio, mostramos el mensaje de error
+            divMsj.classList.add("mostrarMsj");
+            if (btnMsjAceptar.addEventListener('click', function () {
+                divMsj.classList.remove("mostrarMsj");
+            }));
+        } else {
+            // El campo se ha llenado, ocultamos el mensaje de error
+            divMsj.classList.remove("mostrarMsj");
+            divMsj.innerHTML = ""; // Limpiamos el contenido del div
+        }
+    });
+    console.log(SubmitEvent);
 
-const btnIngresar = document.querySelector(".btnIngresar");
-
-btnIngresar.addEventListener('click', function() {
-    // Capturamos el valor del nombre
-    const nombre = nombreIngresar.value.trim();
-
-    if (nombre === "") {
-      // El campo está vacío, mostramos el mensaje de error
-      divMsj.style.display = "block";
-      divMsj.innerHTML = "<p>Por favor, ingrese su nombre.</p>";
-    } else {
-      // El campo no está vacío, ocultamos el mensaje de error
-      divMsj.style.display = "none";
-      divMsj.innerHTML = "";
-    }
-  });
 
 
     // llave,parentesis y ; del document.addEventListener("DOMContentLoaded", () => {  Principal para 
     // ejecutar el js una vez este todo el html cargado...
-  });
+});
 
 
