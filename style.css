@@ -212,11 +212,17 @@ CARROUSEL **********************************************************************
 
 
 .carouselContenedor {
+    margin-top: 15px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: transform 0.2s ease; /* Transición suave para el efecto */
+}
+
+.carouselContenedor:hover{
+    transform: scale(1.08); 
 }
 
 
@@ -265,6 +271,7 @@ button {
 /* ****************************************************     HTML LOGIN  ******************************************** */
 /* Pantalla completa */
 #usuarioSection {
+    padding-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,24 +282,31 @@ button {
 
 /* contenedor de cards img,registro ,ingresar */
 .usuarioDiv {
-    width: 100%;
     display: flex;
     justify-content: center;
-    width: 1000px;
-    height: 400px;
+    width: min(85% , 900px);
+    max-width: 1200px;
+    height: 360px;
     border: solid 3px var(--color-amarillo);
     border-radius: 4px;
     box-shadow: 10px 10px 15px;
     background-color: var(--color-fondoGrisOscuro);
+    transition: transform 0.2s ease; 
 }
-.divImgHola{
+
+.usuarioDiv:hover{
+    transform: scale(1.10); /* Escala el botón al 95% de su tamaño original */
+}
+
+.divImgHola {
     width: 40%;
     background-image: url(./imagenesChicas/holahola.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-right: 3px solid var(--color-amarillo);
+    border-right: solid 3px var(--color-amarillo);
 }
+
 /* titulos iniciar sesion, registrarse */
 .ingresarDiv h2,
 .registrarseDiv h2 {
@@ -301,36 +315,41 @@ button {
     font-size: 1.7rem;
     color: var(--color-amarillo);
     margin-bottom: 15px;
+    border-bottom: solid 2px var(--color-amarillo);
 }
 
 /* div contenedor del form iniciar sesion */
 .ingresarDiv {
-    padding: 20px;
-    width: 32%;
-    border-right: 3px solid var(--color-amarillo);
-}
-
-.btnIngresar {
-    margin-top: 35px;
-    background-color: var(--color-fondoGrisOscuro);
-    border: solid 2px var(--color-amarillo);
-    color: var(--color-amarillo);
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.btnIngresar:hover {
-    background-color: var(--color-amarillo);
-    color: var(--color-fondoGrisOscuro);
+    width: 30%;
+    padding: 15px;
 }
 
 .ingresarDiv form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 5px;
     height: 100%;
-    gap: 10px;
+}
+
+.btnIngresar, .btnRegistro {
+    background-color: var(--color-amarillo);
+    border: solid 2px var(--color-amarillo);
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 40px;
+    transition: transform 0.2s ease; 
+}
+.btnRegistro{
+    margin-top: 6px;
+}
+
+.btnIngresar:hover, .btnRegistro:hover {
+    transform: scale(0.95); /* Escala el botón al 95% de su tamaño original */
+    background-color: var(--color-amarillo);
+    color: var(--color-fondoGrisOscuro);
 }
 
 label {
@@ -339,11 +358,11 @@ label {
     font-family: var(--letra-parrafos);
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 input {
-    padding: 10px;
+    padding: 5px;
     width: 100%;
     border: 2px solid var(--color-parrafosGrisClaro);
 }
@@ -355,6 +374,17 @@ input:focus {
 }
 
 .registrarseDiv {
-    padding: 20px;
-    width: 32%;
+    padding: 15px;
+    width: 30%;
+}
+.registrarseDiv h2{
+    margin: 0;
+}
+
+.registrarseDiv form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    height: 100%;
 }
