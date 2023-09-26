@@ -33,7 +33,7 @@ ul {
     padding-right: 50px;
 }
 
-ul li {
+ul li a {
     color: rgb(17, 5, 46);
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
@@ -41,20 +41,20 @@ ul li {
     font-weight: 600;
 }
 
-ul li:hover {
+ul li a:hover {
     color: white;
 }
 
-.fa-user{
-    font-size: 1.4rem;
+.fa-user {
+    font-size: 1.6rem;
+    color: #11052e;
 }
 
-
+.fa-user:hover {
+    color: white;
+}
 
 /* --------------------------------------------     SECTION PORTADA   -----------------------------------*/
-
-
-
 
 #SectionPortada {
     padding-top: 0;
@@ -234,9 +234,8 @@ al contenido pero seguirá siendo un bloque. */
     border-radius: 5px;
     max-width: 100%;
     max-height: 90vh;
-    border: solid 3px yellow;
-    box-shadow: 12px 12px 12px;
-
+    border: solid 4px var(--color-amarillo);
+    box-shadow: 10px 10px 15px;
 }
 
 button {
@@ -263,7 +262,99 @@ button {
 }
 
 
-/* ------------------------------------     SECCION FORMULARIO    -------------------------------*/
-/* APLICO A TODOS LOS SECTION PARA CADA EJEMPLO */
-/* SECTION FORMULARIO ESTILADO: AL COMIENDO DE LOS ESTILOS DE CARROUSEL */
-/* TITULO Validar datos en formulario ESTILADO EN CARROUSEL */
+/* ****************************************************     HTML LOGIN  ******************************************** */
+/* Pantalla completa */
+#usuarioSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-fondoClaro);
+    height: calc(100vh - 65px);
+    width: 100%;
+}
+
+/* contenedor de cards img,registro ,ingresar */
+.usuarioDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: 400px;
+    border: solid 3px var(--color-amarillo);
+    border-radius: 4px;
+    box-shadow: 10px 10px 15px;
+    background-color: var(--color-fondoGrisOscuro);
+}
+.divImgHola{
+    width: 40%;
+    background-image: url(./imagenesChicas/holahola.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-right: 3px solid var(--color-amarillo);
+}
+/* titulos iniciar sesion, registrarse */
+.ingresarDiv h2,
+.registrarseDiv h2 {
+    text-align: center;
+    font-family: var(--letra-titulos);
+    font-size: 1.7rem;
+    color: var(--color-amarillo);
+    margin-bottom: 15px;
+}
+
+/* div contenedor del form iniciar sesion */
+.ingresarDiv {
+    padding: 20px;
+    width: 32%;
+    border-right: 3px solid var(--color-amarillo);
+}
+
+.btnIngresar {
+    margin-top: 35px;
+    background-color: var(--color-fondoGrisOscuro);
+    border: solid 2px var(--color-amarillo);
+    color: var(--color-amarillo);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btnIngresar:hover {
+    background-color: var(--color-amarillo);
+    color: var(--color-fondoGrisOscuro);
+}
+
+.ingresarDiv form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+}
+
+label {
+    display: block;
+    color: var(--color-parrafosGrisClaro);
+    font-family: var(--letra-parrafos);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid var(--color-parrafosGrisClaro);
+}
+
+input:focus {
+    border: 2px solid var(--color-amarillo);
+    outline: none;
+    /* Elimina el contorno de enfoque predeterminado */
+}
+
+.registrarseDiv {
+    padding: 20px;
+    width: 32%;
+}

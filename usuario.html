@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>USUARIOS </title>
-        <link rel="stylesheet" href="./style.css" />
-        <link rel="stylesheet" href="./animaciones.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-             crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    
-    </head>
-    
-    <body>
-        <header>
-            <img src="./logojs.png" alt="logoJavaScript">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesion - Registrarse </title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./animaciones.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header>
+        <img src="./logojs.png" alt="logoJavaScript">
+        <nav>
             <ul>
-                <li>Inicio</li>
-                <li>Mas funciones</li>
-                <a href="./usuario.html"> <i class="fa-regular fa-user" style="color: #11052e;"></i></a>
-               
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="../WEB1.TPS.ULP/TPJS/index.html" target="_blank">Mas funciones</a></li>
+                <li><a href="./usuario.html"><i class="fa-regular fa-user"></i></a></li>
             </ul>
-        </header>
-    
+        </nav>
+    </header>
+    <section id="usuarioSection">
+        <div class="usuarioDiv">
+            <div class="divImgHola">
+
+            </div>
+
+            <div class="ingresarDiv">
+                <form>
+                    <h2>Iniciar sesión</h2>
+                    <label for="nombreIngresar">Usuario:</label>
+                    <input type="text" id="nombreIngresar" name="nombreIngresar"></input><label for="nombreIngresar"></label>
+                    <label for="passwordIngresar">Contraseña:</label>
+                    <input type="password" id="passwordIngresar" name="passwordIngresar"></input>
+                 <input class="btnIngresar" type="submit" value="Ingresar"> </input> 
+
+                </form>
+            </div>
+            <div class="registrarseDiv">
+                <form>
+                    <h2>Registrarse</h2>
+                    <label for="nombreRegistro">Usuario:</label>
+                    <input type="text" id="nombreRegistro" name="nombreRegistro"></input><label for="nombreRegistro"></label>
+                    <label for="passwordRegistro">Contraseña:</label>
+                    <input type="password" id="passwordRegistro" name="passwordRegistro"></input>
+                    <label for="correoRegistro">E-mail:</label>
+                    <input type="email" id="correoRegistro" name="correoRegistro"></input>
+                    <input class="btnIngresar" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </section>
+
 </body>
+
 </html>
