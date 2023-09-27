@@ -297,7 +297,7 @@ button {
 }
 
 .usuarioDiv:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     /* Escala el botón al 95% de su tamaño original */
 }
 
@@ -315,11 +315,12 @@ button {
 .registrarseDiv h2 {
     text-align: center;
     font-family: var(--letra-titulos);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: var(--color-amarillo);
-    margin-bottom: 15px;
     border-bottom: solid 2px var(--color-amarillo);
+    margin-bottom: 15px;
 }
+
 
 /* div contenedor del form iniciar sesion */
 .ingresarDiv {
@@ -331,8 +332,24 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
     height: 100%;
+}
+
+/*div contenedor inputs ingreso para ordenar los 2 forms iguales */
+.divIngresoInputLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.aRecuperarPass {
+    font-size: 1.05rem;
+    font-family: var(--letra-parrafos);
+    color: var(--color-amarillo);
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 9px;
 }
 
 .btnIngresar,
@@ -343,9 +360,9 @@ button {
     color: var(--color-fondoGrisOscuro);
     cursor: pointer;
     border-radius: 4px;
-    margin-top: 40px;
     transition: transform 0.2s ease;
     font-weight: 600;
+    margin-top: 10px;
 }
 
 .btnRegistro {
@@ -365,12 +382,12 @@ label {
     color: var(--color-parrafosGrisClaro);
     font-family: var(--letra-parrafos);
     font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 input {
-    padding: 5px;
+    border-radius: 3px;
+    padding: 3px;
     width: 100%;
     border: 2px solid var(--color-parrafosGrisClaro);
 }
@@ -426,7 +443,7 @@ input:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px ;
+    padding: 30px;
     padding-bottom: 80px;
     justify-content: center;
     align-items: center;
@@ -439,7 +456,7 @@ input:focus {
     display: flex;
 }
 
-.pMsj{
+.pMsj {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -455,7 +472,7 @@ input:focus {
 
 /* Card Msj boton OK para cerrar el msj */
 .btnAceptar {
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 5px 50px;
     background-color: var(--color-amarillo);
     border-radius: 3px;
@@ -464,18 +481,19 @@ input:focus {
     cursor: pointer;
 }
 
-.btnAceptar:hover{
+.btnAceptar:hover {
     color: white;
-background-color: rgb(50, 116, 50);}
+    background-color: rgb(50, 116, 50);
+}
 
 /* Hover para el mismo aceptar pero en los errores */
-.hoverError:hover{
-background-color: rgb(240, 57, 57);
+.hoverError:hover {
+    background-color: rgb(240, 57, 57);
 }
 
 /* imagen en la card para mensajes de validacion true  */
 /* imagen en la card para mensajes de validacion false */
-.imgOk{
+.imgOk {
     height: 30px;
     width: 30px;
 }

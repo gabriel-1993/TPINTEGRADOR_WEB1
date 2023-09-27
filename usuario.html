@@ -37,23 +37,29 @@
             <div class="ingresarDiv">
                 <form id="ingresoForm">
                     <h2>Iniciar sesión</h2>
-                    <label for="nombreIngresar">Usuario:</label>
-                    <input type="text" id="nombreIngresar" name="nombreIngresar" ></input><label
-                        for="nombreIngresar"></label>
-                    <label for="passwordIngresar">Contraseña:</label>
-                    <input type="password" id="passwordIngresar" name="passwordIngresar" ></input>
-                    <input class="btnIngresar" type="submit" value="Ingresar"> </input>
+                    <div class="divIngresoInputLabel">
+                        <label for="nombreIngresar">Usuario:</label>
+                        <input type="text" id="nombreIngresar" name="nombreIngresar"></input><label
+                            for="nombreIngresar"></label>
+                        <label for="passwordIngresar">Contraseña:</label>
+                        <input type="password" id="passwordIngresar" name="passwordIngresar"></input>
+                        <a class="aRecuperarPass" href="#">Recuperar contraseña</a>
+                        <input class="btnIngresar" type="submit" value="Ingresar"> </input>
+                    </div>
+
 
                 </form>
             </div>
             <div class="registrarseDiv">
-                <form>
+                <form id="registroForm">
                     <h2>Registrarse</h2>
                     <label for="nombreRegistro">Usuario:</label>
                     <input type="text" id="nombreRegistro" name="nombreRegistro"></input><label
                         for="nombreRegistro"></label>
                     <label for="passwordRegistro">Contraseña:</label>
                     <input type="password" id="passwordRegistro" name="passwordRegistro"></input>
+                    <label for="passwordRegistro2">Confirmar contraseña:</label>
+                    <input type="password" id="passwordRegistro2" name="passwordRegistro2"></input>
                     <label for="correoRegistro">E-mail:</label>
                     <input type="email" id="correoRegistro" name="correoRegistro"></input>
                     <input class="btnRegistro" type="submit" value="Enviar">
