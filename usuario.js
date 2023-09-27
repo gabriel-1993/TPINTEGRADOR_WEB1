@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (usuario === "") {
             // msj de error para campo vacio
-            pMsj.style.fontSize="1.3rem";            
+            pMsj.style.fontSize = "1.3rem";
             pMsj.textContent = "Error: El campo de usuario está vacío.";
             pMsj.appendChild(imgError);
             divMsj.classList.add("mostrarMsj");
         } else if (!usuarioExp.test(usuario)) {
             // El usuario no cumple con los criterios letras azAZ09, min 6 letras max 12, muestra el mensaje de error
-            pMsj.style.fontSize="1rem";            
+            pMsj.style.fontSize = "1rem";
             pMsj.textContent = "Error: El usuario puede combinar letras y números, mínimo 6 caracteres y máximo 12.";
             pMsj.appendChild(imgError);
             divMsj.classList.add("mostrarMsj");
@@ -69,14 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (password === "") {
             // msj de error para campo vacio
-            pMsj.style.fontSize="1.3rem";
+            pMsj.style.fontSize = "1.3rem";
             pMsj.textContent = "Error: El campo de password está vacío.";
             pMsj.appendChild(imgError);
             btnMsjAceptar.classList.add("hoverError");
             divMsj.classList.add("mostrarMsj");
         } else if (!passwordExp.test(password)) {
             // El password no cumple con los criterios letras azAZ09, min 5 letras max 10, muestra el mensaje de error
-            pMsj.style.fontSize="1.2rem";
+            pMsj.style.fontSize = "1.2rem";
             pMsj.textContent = "Error: El password puede combinar letras y números, mínimo 5 caracteres y máximo 10.";
             pMsj.appendChild(imgError);
             btnMsjAceptar.classList.add("hoverError");
@@ -121,24 +121,141 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     });
-// VALIDAR FORMULARIO INGRESO  ******************************************************************************************
+    // VALIDAR FORMULARIO REGISTRO  ******************************************************************************************
 
-// //captura formingreso, user, pass, btnIngresar, divCardMsjsOkError, btnAceptar
-// const formRegistro = document.getElementById("registroForm");
-// const usuarioRegistro = document.getElementById("nombreIngresar");
-// const passwordRegistro = document.getElementById("passwordIngresar");
-// const divMsj = document.querySelector(".divMensaje");
-// const btnIngresar = document.querySelector(".btnIngresar");
-// const btnMsjAceptar = document.querySelector(".btnAceptar");
-
-
-
-
+    // //captura formingreso, user, pass, btnIngresar, divCardMsjsOkError, btnAceptar
+    const formRegistro = document.getElementById("registroForm");
+    const usuarioRegistro = document.getElementById("nombreRegistro");
+    const passwordRegistro = document.getElementById("passwordRegistro");
+    const passwordConfirmar = document.getElementById("passwordRegistro2");
+    const correoRegistro = document.getElementById("correoRegistro");
+    // el mismo divMsj  para los mensajes
+    const btnEnviar = document.querySelector(".btnRegistro");
+    // el mismo btnMsjAceptar para cerrar los mensajes...
 
 
+    //MENSAJE DE ERROR REGISTRO
+    // CreateElement  p: msj de error dentro del div
+    //el mismo pMsj 
+    //Agrego el texto del p
+    pMsj.textContent = "Por favor, ingrese un nombre de usuario";
+    //guardo dentro del divMsj el pMsj
+    divMsj.appendChild(pMsj);
+    //logo de error imgError logo de ok imgOk
 
-    // llave,parentesis y ; del document.addEventListener("DOMContentLoaded", () => {  Principal para 
-    // ejecutar el js una vez este todo el html cargado...
- });
+    formRegistro.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        //VALIDAR USUARIO REGISTRO
+
+        // guardar usuario ingresado registro
+        const usuario = usuarioRegistro.value.trim();
+
+        if (usuario === "") {
+            // msj de error para campo vacio
+            pMsj.style.fontSize = "1.3rem";
+            pMsj.textContent = "Error: campo obligatorio. Por favor, ingrese un Usuario.";
+            pMsj.appendChild(imgError);
+            divMsj.classList.add("mostrarMsj");
+        } else if (!usuarioExp.test(usuario)) {
+            // El usuario no cumple con los criterios letras azAZ09, min 6 letras max 12, muestra el mensaje de error
+            pMsj.style.fontSize = "1rem";
+            pMsj.textContent = "Error: El usuario puede combinar letras y números, mínimo 6 caracteres y máximo 12.";
+            pMsj.appendChild(imgError);
+            divMsj.classList.add("mostrarMsj");
+        } else {
+            // Usuario valido guardo boolean para comparar al final
+            usuarioCumple = true;
+        }
+        // el evento click de la card con msjs esta luego del password
+
+
+        //VALIDAR PASSWORD REGISTRO
+
+        //Expresion regular para pass
+        const passwordExp = /^[a-zA-Z0-9]{5,10}$/;
+        const password = passwordRegistro.value.trim();
+        const passwordConfirmar = passwordRegistro2.value.trim();
+        let passwordCumple = false;
+
+        if (password === "" || passwordConfirmar === "") {
+            // msj de error para campo vacio
+            pMsj.style.fontSize = "1.3rem";
+            pMsj.textContent = "Error: campos obligatorios. Por favor, ingrese el password y confirmelo.";
+            pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
+            divMsj.classList.add("mostrarMsj");
+        } else if (password !== passwordConfirmar) {
+            // msj de error para pass diferentes
+            pMsj.style.fontSize = "1.3rem";
+            pMsj.textContent = "Error: passwords diferentes. Por favor, ingrese el mismo password en confirmación.";
+            pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
+            divMsj.classList.add("mostrarMsj");
+        }
+        else if (!passwordExp.test(password)) {
+            // El password no cumple con los criterios letras azAZ09, min 5 letras max 10, muestra el mensaje de error
+            pMsj.style.fontSize = "1.2rem";
+            pMsj.textContent = "Error: El password puede combinar letras y números, mínimo 5 caracteres y máximo 10.";
+            pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
+            divMsj.classList.add("mostrarMsj");
+        } else {
+            // Usuario valido guardo boolean para comparar al final
+            passwordCumple = true;
+        }
+
+        //VALIDAR CORREO
+        const correoRegistro = document.getElementById("correoRegistro");
+        const correo = correoRegistro.value.trim();
+        const expCorreo = /^[a-zA-Z0-9-_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let correoCumple=false;
+        if (correo === "") {
+            // Msj error para correo ingresado vacio 
+            pMsj.style.fontSize = "1.2rem";
+            pMsj.textContent = "Error: campo obligatorio. Por favor, ingrese un E-mail.";
+            pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
+            divMsj.classList.add("mostrarMsj");
+        } else if (!expCorreo.test(correo)) {
+            // Msj error para correo mal ingresado
+            pMsj.style.fontSize = "1.2rem";
+            pMsj.textContent = "Error: el E-mail debe tener el formato correcto: nombre@dominio.com";
+            pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
+            divMsj.classList.add("mostrarMsj");
+        } else {
+            correoCumple=true;
+        }
+
+        if(usuarioCumple && passwordCumple && correoCumple){
+           //limpiar campos
+            usuarioIngresar.value = "";
+            passwordRegistro.value = "";
+            passwordRegistro2.value="";
+            correoRegistro.value="";
+            //mostrar msj
+            pMsj.textContent = "¡ Bienvenido... registro exitoso !";
+            pMsj.appendChild(imgOk);
+            divMsj.classList.add("mostrarMsj");
+        }
+
+        // Evento click para la card de mensajes
+        btnMsjAceptar.addEventListener('click', function () {
+            divMsj.classList.remove("mostrarMsj");
+            // Enviar el formulario
+            formRegistro.submit();
+        });
+
+
+    // }); del event form registro
+    });
+
+
+
+
+
+//cierre });  document.addEventListener("DOMContentLoaded", () => { ... ejecuta JS luego de la carga del DOM
+});
 
 
