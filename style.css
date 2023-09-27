@@ -418,15 +418,16 @@ input:focus {
     display: none;
     z-index: 3;
     height: auto;
-    width: 250px;
+    width: auto;
     border: solid 4px var(--color-amarillo);
     border-top: solid 20px var(--color-amarillo);
-    background-color: rgb(41, 40, 40);
+    background-color: rgb(51, 49, 49);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px ;
+    padding: 30px ;
+    padding-bottom: 80px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -439,12 +440,17 @@ input:focus {
 }
 
 .pMsj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.9rem;
+    font-family: var(--letra-parrafos);
+    font-weight: 500;
     color: white;
     width: 100%;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
+    gap: 4px;
 }
 
 /* Card Msj boton OK para cerrar el msj */
@@ -459,5 +465,17 @@ input:focus {
 }
 
 .btnAceptar:hover{
-    color: var(--color-fondoGrisOscuro);
+    color: white;
+background-color: rgb(50, 116, 50);}
+
+/* Hover para el mismo aceptar pero en los errores */
+.hoverError:hover{
+background-color: rgb(240, 57, 57);
+}
+
+/* imagen en la card para mensajes de validacion true  */
+/* imagen en la card para mensajes de validacion false */
+.imgOk{
+    height: 30px;
+    width: 30px;
 }
