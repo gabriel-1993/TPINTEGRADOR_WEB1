@@ -1,7 +1,7 @@
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
+
 
 //Trabajo Práctico en JS realizado en WEB1 ULP :
 
@@ -30,6 +30,7 @@ function ejercicio1() {
 
         p1.innerHTML = `Hola ${nombre}! Has vivido ${diasVividos} días hasta hoy.`;
         p1.style.color = "yellow";
+        p1.style.display="block";
     } else {
         p1.innerHTML = "❌ Error: Datos ingresados no válidos ❌";
         p1.style.color = "red";
@@ -94,6 +95,7 @@ const btn3 = document.querySelector(".btn3");
 const p3 = document.querySelector(".p3");
 
 function ejercicio3() {
+    p3.innerHTML="";
     var item;
     var lista = ['a', 'b', 'c', '1', 'x', '9', 'd', '4'];
     for (var item of lista) {
@@ -126,7 +128,6 @@ function ejercicio4() {
     let numAleatorio;
     for (let i = 0; i < 50; i++) {
         numAleatorio = Math.floor(Math.random() * 6) + 1;
-        console.log(numAleatorio);
         p4.innerHTML += `'${numAleatorio}' .`;
         p4.style.color = "yellow";
         p4.style.display = "block";
@@ -149,29 +150,36 @@ de intentos que ha realizado hasta el acierto */
 let btn5 = document.querySelector(".btn5");
 let p5 = document.querySelector(".p5");
 
+
 function ejercicio5() {
     p5.innerHTML = "";
     numAleatorio = Math.floor(Math.random() * 10) + 1;
-    console.log(numAleatorio);
     let respuesta;
     let msj = "";
+    let contador = 0;
+
     respuesta = prompt("Vamos a adivinar un numero!, ingrese un numero entre 0 y 10 ");
-    // Agregamos una comprobación para manejar el caso en que el usuario cancele el prompt.
+
     while (respuesta !== null) {
-        respuesta = parseInt(respuesta);
         contador++;
-        if (respuesta === numAleatorio) {
-            p5.innerHTML = "🎇🎆🥳 ¡ADIVINASTE! 😅😅. Intentos: " + contador;
-            p5.style.display = "block";
-            p5.style.color = "yellow";
-            // Salimos del bucle 
-            break;
-        } else if (respuesta > numAleatorio) {
-            msj = "Ingrese un número más chico...";
-        } else if (respuesta < numAleatorio) {
-            msj = "Ingrese un número más grande...";
+        if (respuesta === "") {
+            msj = "Por favor, ingrese un número válido.";
+        } else if (isNaN(respuesta)) {
+            msj = "Eso no parece ser un número. Por favor, ingrese un número válido.";
+        } else {
+            respuesta = Number(respuesta); // Convierte la respuesta en un número
+            if (respuesta === numAleatorio) {
+                p5.innerHTML = "🎇🎆🥳 ¡ADIVINASTE! 😅😅. Intentos: " + contador;
+                p5.style.display = "block";
+                p5.style.color = "yellow";
+                break;
+            } else if (respuesta > numAleatorio) {
+                msj = "Ingrese un número más chico...";
+            } else if (respuesta < numAleatorio) {
+                msj = "Ingrese un número más grande...";
+            }
         }
-        respuesta = prompt(msj); // Mostramos el mensaje actualizado.
+        respuesta = prompt(msj); // Mostrar el mensaje actualizado.
     }
 }
 
@@ -227,7 +235,7 @@ const p7 = document.querySelector(".p7");
 const btn7 = document.querySelector(".btn7");
 
 function ejercicio7() {
-    let frases = ["Mereces lo que sueñas. -Gustavo Cerati", "Vive de instante en instante porque eso es la vida. -Facundo Cabral ", "Si estás atento al presente, el pasado no te distraerá, entonces serás siempre nuevo. -Facundo Cabral", "Y...con el diario del lunes...", "Cada dia trae su propio afan", "Consejos vendo y para mi no tengo", "Del dicho al hecho,hay un largo trecho"];
+    let frases = ["Mereces lo que sueñas. -Gustavo Cerati", "Vive de instante en instante porque eso es la vida. -Facundo Cabral ", "Si estás atento al presente, el pasado no te distraerá, entonces serás siempre nuevo. -Facundo Cabral","Hechos, no palabras.", "Y...con el diario del lunes...", "Cada dia trae su propio afan.", "Consejos vendo... y para mi no tengo.","La unión hace la fuerza."];
     const indiceAleatorio = Math.floor(Math.random() * frases.length);
     p7.style.display = "block";
     p7.style.color = "yellow";
@@ -249,13 +257,27 @@ const p8 = document.querySelector(".p8");
 
 function ejercicio8() {
     let miArray = [];
-    let num, suma = 0, promedio, min = Infinity, max = -Infinity;
-    //ingresa los numeros y calcula promedio,min y max
+    let suma = 0, promedio, min = Infinity, max = -Infinity;
+    
     for (let i = 0; i < 4; i++) {
-        num = prompt("Ingrese un numero entero");
-        num = parseInt(num);
+        let num;
+        while (true) {
+            num = prompt("Ingrese un numero entero");
+            if (num === null) {
+                // El usuario ha cancelado la entrada
+                return;
+            }
+            num = parseInt(num);
+            if (!isNaN(num)) {
+                // Si es un número válido, salir del bucle
+                break;
+            } else {
+                // Si no es un número válido, mostrar un mensaje de error
+                alert("Por favor, ingrese un número entero válido.");
+            }
+        }
+        
         suma += num;
-        console.log("suma al instante" + suma);
         miArray.push(num);
         if (num > max) {
             max = num;
@@ -264,29 +286,28 @@ function ejercicio8() {
             min = num;
         }
     }
-    console.log("prom fin for promedio" + promedio);
+
     promedio = suma / 4;
 
-    //calcula mediana
     let mediana;
     miArray.sort((a, b) => a - b);
     const mitad = Math.floor(miArray.length / 2);
     if (miArray.length % 2 === 0) {
-        // Si la longitud del array es par, toma el promedio de los dos valores del medio
         const valor1 = miArray[mitad - 1];
         const valor2 = miArray[mitad];
         mediana = (valor1 + valor2) / 2;
     } else {
-        // Si la longitud del array es impar, toma el valor del medio
         mediana = miArray[mitad];
     }
+
     p8.style.display = "block";
     p8.style.color = "yellow";
     p8.innerHTML = "Promedio del grupo ingresado : " + promedio + "<br>" +
         " Mediana del grupo ingresado : " + mediana + "<br>" +
         " Minimo del grupo ingresado : " + min + "<br>" +
-        "Maximo del grupo ingresado : " + max + "<br>";
+        " Maximo del grupo ingresado : " + max + "<br>";
 }
+
 btn8.addEventListener('click', ejercicio8);
 
 //************************************************************************************************************************************************************** */
@@ -294,21 +315,45 @@ btn8.addEventListener('click', ejercicio8);
 
 // 9) Realice una página que permita cargar los datos de una persona en un array. Luego la
 // página deberá mostrar en una tabla html con las cabeceras adecuadas los datos solicitados.
-
 const btn9 = document.querySelector(".btn9");
 const p9 = document.querySelector(".p9");
+
 function ejercicio9() {
-    let resp;
     let persona = [];
-    resp = prompt(" Ingrese su Nombre ");
+    
+    // Validación para el nombre
+    let resp = prompt("Ingrese su Nombre");
+    while (!resp || !isNaN(resp)) {
+        resp = prompt("Por favor, ingrese un nombre válido");
+    }
     persona.push(resp);
+
+    // Validación para el apellido
     resp = prompt("Ingrese su Apellido");
+    while (!resp || !isNaN(resp)) {
+        resp = prompt("Por favor, ingrese un apellido válido");
+    }
     persona.push(resp);
-    resp = prompt("Ingrese su telefono");
+
+    // Validación para el teléfono (asumimos un formato de 10 dígitos)
+    resp = prompt("Ingrese su Teléfono (10 dígitos)");
+    while (!resp || isNaN(resp) || resp.length !== 10) {
+        resp = prompt("Por favor, ingrese un número de teléfono válido (10 dígitos)");
+    }
     persona.push(resp);
-    resp = prompt("Ingrese su direccion");
+
+    // Validación para la dirección
+    resp = prompt("Ingrese su Dirección");
+    while (!resp) {
+        resp = prompt("Por favor, ingrese una dirección válida");
+    }
     persona.push(resp);
-    resp = prompt("Ingrese fecha de nacimiento: 00-00-0000");
+
+    // Validación para la fecha de nacimiento (asumimos formato 00-00-0000)
+    resp = prompt("Ingrese su Fecha de Nacimiento (00-00-0000)");
+    while (!resp || !/^\d{2}-\d{2}-\d{4}$/.test(resp)) {
+        resp = prompt("Por favor, ingrese una fecha de nacimiento válida en el formato 00-00-0000");
+    }
     persona.push(resp);
 
     p9.innerHTML = "<table border='1'>" +
@@ -331,6 +376,7 @@ function ejercicio9() {
     p9.style.display = "block";
     p9.style.color = "yellow";
 }
+
 btn9.addEventListener('click', ejercicio9);
 
 //************************************************************************************************************************************************************** */
@@ -338,40 +384,53 @@ btn9.addEventListener('click', ejercicio9);
 
 // 10) Realice una página que permita cargar una fecha en el formato DD-MM-YYYY y diga
 // cuántos días faltan o ya pasaron respecto del día de hoy.
-
 const btn10 = document.querySelector(".btn10");
 const p10 = document.querySelector(".p10");
+
 function ejercicio10() {
-    //fecha ingresada 
     const fechaString = prompt("Ingrese una fecha dividida por guiones: dia-mes-año 00-00-0000");
-    //guarda la fecha string,  separada(-) en un array
-    let fechaArray = fechaString.split("-");
-    //creo un tipo de dato fecha y le asigno los valores desde el array
-    let fechaDate = new Date();
-    fechaDate.setFullYear(fechaArray[2]);
-    fechaDate.setMonth(fechaArray[1] - 1);
-    fechaDate.setDate(fechaArray[0]);
 
-    let resultado = "";
+    // Validar si la entrada cumple con el formato esperado (dd-mm-yyyy)
+    const regex = /^\d{2}-\d{2}-\d{4}$/;
+    if (!regex.test(fechaString)) {
+        p10.innerHTML = "Formato de fecha incorrecto. Por favor, ingrese una fecha válida en el formato 00-00-0000.";
+        p10.style.color = "red";
+        p10.style.display = "block";
+        return;
+    }
+
+    const fechaArray = fechaString.split("-");
+    const dia = parseInt(fechaArray[0]);
+    const mes = parseInt(fechaArray[1]);
+    const año = parseInt(fechaArray[2]);
+
+    // Validar si los valores son numéricos y están en rangos válidos
+    if (isNaN(dia) || isNaN(mes) || isNaN(año) || dia < 1 || dia > 31 || mes < 1 || mes > 12 || año < 1000 || año > 9999) {
+        p10.innerHTML = "Fecha no válida. Por favor, ingrese una fecha válida.";
+        p10.style.color = "red";
+        p10.style.display = "block";
+        return;
+    }
+
+    const fechaDate = new Date();
+    fechaDate.setFullYear(año);
+    fechaDate.setMonth(mes - 1); // Restar 1 al mes ya que los meses en JavaScript van de 0 a 11.
+    fechaDate.setDate(dia);
+
     const fechaHoy = new Date();
+    let resultado = "";
+
     if (fechaDate > fechaHoy) {
-        // Calcula la diferencia en milisegundos entre las fechas
         const diferenciaMilisegundos = fechaDate - fechaHoy;
-        // Convierte la diferencia a días
         resultado = "Faltan " + Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24)) + " días.";
-        p10.innerHTML = resultado;
-    }
-    if (fechaDate < fechaHoy) {
-        // Calcula la diferencia en milisegundos entre las fechas
+    } else if (fechaDate < fechaHoy) {
         const diferenciaMilisegundos = fechaHoy - fechaDate;
-        // Convierte la diferencia a días
-        resultado = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
-        p10.innerHTML = "Pasaron " + resultado + " dias.";
+        resultado = "Pasaron " + Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24)) + " días.";
     } else {
-        resultado = " Ingreso el dia actual. ES HOY !!!!";
-        p10.innerHTML = resultado;
+        resultado = "Ingresó el día actual. ¡ES HOY!";
     }
 
+    p10.innerHTML = resultado;
     p10.style.color = "yellow";
     p10.style.display = "block";
 }
@@ -516,7 +575,6 @@ function ejercicio2b() {
         let nombre = nombreInput.value.trim().toUpperCase();
         if (nombre === '') {
             alert('Por favor, ingresa tu nombre.');
-            nombre.focus();
             nombreCumple = false;
         }
         // La expresión /^[a-zA-Z\s]+$/ es una expresión regular para verificar
@@ -524,7 +582,6 @@ function ejercicio2b() {
         // esta negado : ! para mostrar el msj para un nom mal ingresado
         else if (!/^[a-zA-Z\s]+$/.test(nombre)) {
             alert('Error: solo puedes ingresar letras y/o espacios');
-            nombre.focus();
             nombreCumple = false;
         } else {
             // Envia el formulario si la validacion es exitosa
@@ -909,5 +966,3 @@ function ejercicio4b() {
     btnNewAlbum.addEventListener('click', cargarValidarCanciones);
 }
 btn4b.addEventListener('click', ejercicio4b);
-
-});
