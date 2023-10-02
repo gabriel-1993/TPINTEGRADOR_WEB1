@@ -245,6 +245,7 @@ h2 {
 
 /* Consigna 10b display para mostrar nueros ingresados y resultado */
 .div10b {
+    display: none;
     width: 460px;
     border: unset;
     box-shadow: none;
@@ -254,10 +255,9 @@ h2 {
     padding: 0;
     width: auto;
     margin-bottom: 0px;
-    box-shadow: none;
     background-color: var(--color-parrafosGrisClaro);
     border: solid 2px var(--color-amarillo);
-
+    box-shadow: rgba(0, 0, 0, 0.59) 13px 13px 6px;
 }
 
 /* Consigna10b contenedor de los botones */

@@ -1258,7 +1258,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btn9b.addEventListener('click', ejercicio9b);
 
-     //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
     //************************************************************************************************************************************************************** */
 
 
@@ -1268,63 +1268,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const div10b = document.querySelector(".div10b");
     const btn10b = document.querySelector(".btn10b");
+    const sen = document.querySelector(".bSen");
+    const cos = document.querySelector(".bCos");
+    const raiz = document.querySelector(".bRaiz");
+    const multi = document.querySelector(".bMulti");
+
+
+
+
 
     function ejercicio10b() {
-        div10b.innerHTML = '<div class="divDisplay10b"> <span style="border: solid 1px white; display:block "; class=numIngresado>numingresado </span><p class="pDisplay" style="border: solid 1px red"></p> </div>' +
-            '<div class="divContenedorBtns10b" style="display:flex; flex-direction:column; gap:4px; ">' +
-            //primer fila de botones
 
-            '<div class="divFilaBtns">' +
-            '<button class="btnCalculadora";>SEN</button>' +
-            '<button class="btnCalculadora";>COS</button>' +
-            '<button class="btnCalculadora";>&#8730;</button>'+
-            '<button class="btnCalculadora";>*</button > ' +
-            '<button class="btnCalculadora" style="background-color:red ";>AC</button > ' +
-            '</div>' +
+        let displayValue = '';
+        let currentValue = 0;
+        let currentOperator = '';
 
+        function agregarDisplay(value) {
+            displayValue += value;
+            document.getElementById('numIngresado').value = displayValue;
+        }
 
-            //primer fila numeros
-            '<div class="divFilaBtns">' +
-            '<button class="btnCalculadora";>7</button>' +
-            '<button class="btnCalculadora";>8</button>' +
-            '<button class="btnCalculadora";>9</button>' +
-            '<button class="btnCalculadora";>-</button>' +
-            '<button class="btnCalculadora" style="background-color:rgb(82, 80, 80)";>DEL</button > ' +
-            '</div>' +
+        function clearDisplay() {
+            displayValue = '';
+            document.getElementById('numIngresado').value = '';
+        }
 
-            '<div class="divFilaBtns">' +
-            '<button class="btnCalculadora";>4</button>' +
-            '<button class="btnCalculadora";>5</button>' +
-            '<button class="btnCalculadora";>6</button>' +
-            '<button class="btnCalculadora";>+</button>' +
-            '<button class="btnCalculadora";>MOD</button>' +
+        function performOperation(operator) {
+            if (currentOperator !== '') {
+                calculateResult();
+            }
+            currentValue = parseFloat(displayValue);
+            currentOperator = operator;
+            clearDisplay();
+        }
 
-            '</div>' +
+        function calculateResult() {
+            const newValue = parseFloat(displayValue);
+            switch (currentOperator) {
+                case '+':
+                    currentValue += newValue;
+                    break;
+                case '-':
+                    currentValue -= newValue;
+                    break;
+                case '*':
+                    currentValue *= newValue;
+                    break;
+                case '/':
+                    currentValue /= newValue;
+                    break;
+            }
+            displayValue = currentValue.toString();
+            currentOperator = '';
+            document.getElementById('display').value = displayValue;
+        }
 
-            //primer fila numeros
-            '<div class="divFilaBtns">' +
-            '<button class="btnCalculadora";>1</button>' +
-            '<button class="btnCalculadora";>2</button>' +
-            '<button class="btnCalculadora";>3</button>' +
-            '<button class="btnCalculadora";>/</button>' +
+        // Función para calcular el módulo (resto)
+        function calculateModulus() {
+            const newValue = parseFloat(displayValue);
+            currentValue %= newValue;
+            displayValue = currentValue.toString();
+            document.getElementById('numIngresado').innerText = displayValue;
+        }
 
-            '<button class="btnCalculadora";>&#37</button > ' +
-            '</div>' +
+        function calculatePercentage() {
+            currentValue = parseFloat(displayValue) / 100;
+            displayValue = currentValue.toString();
+            document.getElementById('display').value = displayValue;
+        }
 
+        function calculateSquareRoot() {
+            currentValue = Math.sqrt(parseFloat(displayValue));
+            displayValue = currentValue.toString();
+            document.getElementById('display').value = displayValue;
+        }
 
-            //primer fila numeros
-            '<div class="divFilaBtns5">' +
-            '<button class="btnCalculadora";>.</button>' +
-            '<button class="btnCalculadora";>0</button>' +
-            '<button class="btnCalculadoraIgual";>=</button>' +
-          
+        function calculateSine() {
+            currentValue = Math.sin(parseFloat(displayValue));
+            displayValue = currentValue.toString();
+            document.getElementById('display').value = displayValue;
+        }
 
-            '</div>' +
+        function calculateCosine() {
+            currentValue = Math.cos(parseFloat(displayValue));
+            displayValue = currentValue.toString();
+            document.getElementById('display').value = displayValue;
+        }
 
+        // Función para eliminar el último dígito
+        function deleteLastDigit() {
+            displayValue = displayValue.slice(0, -1);
+            document.getElementById('numIngresado').innerText = displayValue;
+        }
 
-            //cierre div contenedor de botones
-            '</div>';
         div10b.style.display = "block";
+
+
 
 
 
