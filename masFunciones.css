@@ -1,14 +1,12 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     list-style: none;
     text-decoration: none;
-    
+    box-sizing: border-box;
+    /* scroll mas lento */
+    scroll-behavior: smooth;
 }
-
 
 :root {
     --color-amarillo: rgb(250, 229, 43);
@@ -33,7 +31,6 @@ ul {
     display: flex;
     gap: 20px;
     padding-right: 50px;
-    flex-direction: column;
 }
 
 ul li a {
@@ -57,6 +54,16 @@ ul li a:hover {
     color: white;
 }
 
+/* SECTION */
+:root {
+    --color-amarillo: rgb(250, 229, 43);
+    --color-fondoClaro: rgba(128, 128, 128, 0.493);
+    --color-parrafosGrisClaro: rgb(197, 196, 196);
+    --color-fondoGrisOscuro: rgb(100, 99, 99);
+    --letra-titulos: monospace;
+    --letra-parrafos: 'Courier New', Courier, monospace;
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -64,7 +71,7 @@ section {
     justify-content: center;
     gap: 45px;
     padding: 0 30px;
-    background-color: rgb(31, 31, 29);
+    background-color: var(--color-fondoClaro);
     /* Espacio vacio para el fin de la pagina */
     padding-bottom: 80px;
 }
@@ -72,14 +79,14 @@ section {
 /* Section contenedor de cards consignas y h1: tp javascript... */
 section h1 {
     margin: 40px 0;
-    color: white;
-    background-color: rgb(19, 18, 18);
+    background-color: var(--color-fondoGrisOscuro);
     box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.589);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     font-size: 2.4rem;
     color: yellow;
+    font-family: var(--letra-titulos);
 }
 
 /* Div/Card consigna individual */
@@ -88,9 +95,11 @@ section div {
     border: solid 1px yellow;
     border-radius: 8px;
     padding: 18px;
-    background-color: rgb(20, 18, 18);
+    background-color: var(--color-fondoGrisOscuro);
     box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.589);
     width: 80%;
+    font-family: var(--letra-parrafos);
+    color: var(--color-parrafosGrisClaro);
 }
 
 
@@ -139,18 +148,22 @@ button {
     width: 25%;
     height: 45px;
     padding: 10px 0;
-    background-color: rgb(19, 18, 18);
+    background-color: var(--color-amarillo);
     border-radius: 4px;
     font-size: 1rem;
     letter-spacing: 1px;
     font-weight: 600;
     box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.842);
-    border: rgb(19, 18, 18) solid 1px;
+    border: none;
 }
 
 button:hover {
-    border: solid yellow 1px;
-    color: yellow;
+    color: white;
+}
+
+/* consigna 3 colum al ul */
+.ulConsigna3{
+    flex-direction: column;
 }
 
 /* Consigna 6 colores para cada cuadro */
@@ -166,36 +179,47 @@ button:hover {
     border: none;
     cursor: pointer;
 }
-.div6_2{
+
+.div6_2 {
     background-color: yellow;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
-.div6_3{
+
+.div6_3 {
     background-color: cadetblue;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
-.div6_4{
+
+.div6_4 {
     background-color: teal;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
-.div6_5{
+
+.div6_5 {
     background-color: darkgoldenrod;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
+.div6_6 {
+    background-color: #1f1f1d;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
 /* PARTE B TITULO */
-h2{
+h2 {
     margin: 40px 0;
     color: white;
-    background-color: rgb(19, 18, 18);
+    background-color:var(--color-fondoGrisOscuro);
     box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.589);
     border-radius: 10px;
     padding: 20px 60px;
@@ -204,45 +228,67 @@ h2{
     color: yellow;
 }
 
+
+/* consigna 7b boton limpiar campos */
+.btn7bLimpiar {
+    background-color: rgb(19, 18, 18);
+    padding: 8px;
+    color: yellow;
+    font-weight: 300;
+    font-size: 12px;
+    margin-top: 8px;
+    box-shadow: none;
+    border: solid 1px rgb(208, 208, 208);
+    width: 100%;
+}
+
 /* *************************************************      MEDIAQUERY EN ESTE MISMO ARCHIVO   ************************************************ */
 
 @media (max-width: 768px) {
-    section{
+    section {
         width: 100%;
         padding: 0;
     }
-  section h1{
-    width: 90%;
-  }
-  section div{
-    width: 95%;
-  }
-  .divBtnRes{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  button{
-    width:95%;
-    padding: 0
-  } 
-  .pResultado{
-    width: 95%;
-  }
-   /* tabla en resoluciones chicas */
-   .div9{
-    padding: 15px 0;
-   }
-   .div9 h3{
-    padding-left: 20px;
-   }
-   .divBtnRes9{
-    width: 100%;
-   }
-   .p9{
-    width: 100%;
-    padding: 0;
-   }
-  
-}
 
+    section h1 {
+        width: 90%;
+    }
+
+    section div {
+        width: 95%;
+    }
+
+    .divBtnRes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        width: 95%;
+        padding: 0
+    }
+
+    .pResultado {
+        width: 95%;
+    }
+
+    /* tabla en resoluciones chicas */
+    .div9 {
+        padding: 15px 0;
+    }
+
+    .div9 h3 {
+        padding-left: 20px;
+    }
+
+    .divBtnRes9 {
+        width: 100%;
+    }
+
+    .p9 {
+        width: 100%;
+        padding: 0;
+    }
+
+}
