@@ -1164,7 +1164,111 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
+    //Realiza una página que capture las coordenadas del ratón y las muestre en el título del documento (title).
+
+    const btn8b = document.querySelector(".btn8b");
+
+    function ejercicio8b() {
+        // Agregar un event listener para capturar el movimiento del ratón
+        document.addEventListener('mousemove', function (event) {
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // Actualizar el título del documento
+            document.title = "Coord: X=" + x + ", Y=" + y;
+        })
+    }
+    btn8b.addEventListener('click', ejercicio8b);
+
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
+
+    //Realiza una página que efectúe 3 preguntas de evaluación donde el usuario seleccione a través de radio button su 
+    //respuesta. La página proporcionará la evaluación y las respuestas correctas a petición del usuario
+
+    const btn9b = document.querySelector(".btn9b");
+    const div9b = document.querySelector(".div9b");
+
+    function ejercicio9b() {
+        div9b.innerHTML = '<p>Evaluación teorica</p>' +
+            '<p>¿Qué es una variable en programación?' +
+            '<form id="formulario1">' +
+            '<label><input type="radio" name="respuesta1" value="A">A) Un espacio reservado en memoria</label><br>' +
+            '<label><input type="radio" name="respuesta1" value="B">B) Algo que varia</label><br>' +
+            '<label><input type="radio" name="respuesta1" value="C">C) Un lugar para tomar café</label><br>' +
+            '</form>' +
+            '<p>¿Qué es el scope?' +
+            '<form id="formulario2">' +
+            '<label><input type="radio" name="respuesta2" value="A">A) Un editor de codigo.</label><br>' +
+            '<label><input type="radio" name="respuesta2" value="B">B) El alcance que una variable tendrá en tu código.</label><br>' +
+            '<label><input type="radio" name="respuesta2" value="C">C) Un lenguaje de programación.</label><br>' +
+            '</form>' +
+            '<p>¿Qué es un parámetro?' +
+            '<form id="formulario3">' +
+            '<label><input type="radio" name="respuesta3" value="A">A) Variable utilizada para devolver valores de entrada.</label><br>' +
+            '<label><input type="radio" name="respuesta3" value="B">B) Condición anidada dentro de una función.</label><br>' +
+            '<label><input type="radio" name="respuesta3" value="C">C) Variable utilizada para recibir valores de entrada.</label><br>' +
+            '</form>' +
+            '<input class="btnVerificar"; style="margin-top:10px; background-color: rgb(19, 18, 18); padding: 10px; color: yellow;" type="submit" value="Verificar respuestas">';
+        div9b.style.display = "block";
+        div9b.style.color = "yellow";
+
+        const btnVerificar = document.querySelector(".btnVerificar");
+
+        btnVerificar.addEventListener('click', function () {
+            const respuestasCorrectas = {
+                formulario1: "A",
+                formulario2: "B",
+                formulario3: "C"
+            };
+
+            let respuestasUsuario = {};
+
+            let todasLasRespuestasSeleccionadas = true;
+
+            // Obtener las respuestas seleccionadas por el usuario y verificar si todas estan seleccionadas
+            for (let i = 1; i <= 3; i++) {
+                const formularioId = "formulario" + i;
+                const respuestaSeleccionada = document.querySelector(`#${formularioId} input[name="respuesta${i}"]:checked`);
+
+                if (respuestaSeleccionada) {
+                    respuestasUsuario[formularioId] = respuestaSeleccionada.value;
+                } else {
+                    todasLasRespuestasSeleccionadas = false;
+                    break; // Salir del bucle si falta alguna respuesta
+                }
+            }
+
+            if (todasLasRespuestasSeleccionadas) {
+                // Comparar las respuestas del usuario con las respuestas correctas
+                let nota = 1;
+                for (const formularioId in respuestasUsuario) {
+                    if (respuestasCorrectas[formularioId] === respuestasUsuario[formularioId]) {
+                        nota += 33.3;
+                    }
+                }
+                div9b.innerHTML += '<p style="margin-top:8px; border: solid 1px yellow; color: yellow" ;>Resultado final: ' + nota.toFixed(2) + '% de 100. </p>';
+            } else {
+                div9b.innerHTML += '<p style="margin-top:8px;border: solid 1px yellow; color: yellow";>Debes seleccionar una respuesta en cada formulario antes de verificar.</p>';
+            }
+        })
+    }
+
+    btn9b.addEventListener('click', ejercicio9b);
+
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
 
 
+    //Realiza una página que implemente una calculadora aritmética.
+    const div10b = document.querySelector(".div10b");
+
+    function ejercicio10b(){
+        
+
+
+    }
     // }); final para cargar el Js luego del DOM
 });

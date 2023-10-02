@@ -188,21 +188,21 @@ button:hover {
 }
 
 .div6_3 {
-    background-color: cadetblue;
+    background-color: gray;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
 .div6_4 {
-    background-color: teal;
+    background-color: green;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
 .div6_5 {
-    background-color: darkgoldenrod;
+    background-color: orange;
     box-shadow: none;
     border: none;
     cursor: pointer;
