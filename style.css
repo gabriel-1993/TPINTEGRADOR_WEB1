@@ -497,3 +497,79 @@ input:focus {
     height: 30px;
     width: 30px;
 }
+
+/* --------------------------------------------     CONTACTO HTML   -------------------------------------------*/
+
+#sectionContacto {
+    width: 100%;
+    height: calc(100vh - 105px );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    margin: 0;
+    gap: 0;
+}
+
+.contactanosh1 {
+    color: var(--color-amarillo);
+    font-family: var(--letra-titulos);
+    font-size: 1.6rem;
+}
+
+.contactanosh2 {
+    font-size: 1rem;
+    color: var(--color-parrafosGrisClaro);
+    font-family: var(--letra-parrafos);
+}
+
+.divContactoContenedor {
+    margin-top: 19px;
+    display: flex;
+    width: min(85%, 900px);
+    border: solid 2px var(--color-amarillo);
+    border-radius: 4px;
+    background-color: var(--color-fondoGrisOscuro);
+    box-shadow: 10px 10px 15px;
+
+}
+
+.divImgContacto {
+    background-image: url("./imagenesChicas/contactanos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+}
+
+.divFormContacto {
+    width: 100%;
+    padding: 14px;
+}
+
+.contactoForm label {
+    color: yellow;
+    margin-right: 10px;
+}
+
+
+#nombreContacto,
+#correoElectronicoContacto,
+#mensajeContacto {
+    background-color: white;
+    padding: 10px;
+    color: yellow;
+    margin-right: 10px;
+}
+
+.btnEnviarContacto {
+    background-color: var(--color-amarillo);
+    border: solid 2px var(--color-amarillo);
+    font-size: 1.2rem;
+    color: var(--color-fondoGrisOscuro);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    font-weight: 600;
+    margin-top: 10px;
+}
