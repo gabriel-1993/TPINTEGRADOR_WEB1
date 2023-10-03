@@ -1,3 +1,12 @@
+:root {
+    --color-amarillo: rgb(231, 231, 22);
+    --color-fondoClaro: rgba(128, 128, 128, 0.493);
+    --color-parrafosGrisClaro: rgb(197, 196, 196);
+    --color-fondoGrisOscuro: rgb(100, 99, 99);
+    --letra-titulos: monospace;
+    --letra-parrafos: 'Courier New', Courier, monospace;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,7 +18,7 @@
 }
 
 :root {
-    --color-amarillo: rgb(250, 229, 43);
+    --color-amarillo: rgb(231, 231, 22);
     --color-fondoClaro: rgba(128, 128, 128, 0.493);
     --color-parrafosGrisClaro: rgb(197, 196, 196);
     --color-fondoGrisOscuro: rgb(100, 99, 99);
@@ -208,12 +217,7 @@ button:hover {
     cursor: pointer;
 }
 
-.div6_6 {
-    background-color: #1f1f1d;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
-}
+
 
 /* PARTE B TITULO */
 h2 {
@@ -317,6 +321,23 @@ h2 {
     background-color: gray;
     color: yellow;
     border: none;
+}
+
+/* footer */
+.footer {
+    height: 40px;
+    width: 100%;
+    background-color: var(--color-amarillo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer h3 {
+    font-family: var(--letra-parrafos);
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 /* *************************************************      MEDIAQUERY EN ESTE MISMO ARCHIVO   ************************************************ */

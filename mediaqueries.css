@@ -1,0 +1,63 @@
+:root {
+    --color-amarillo: rgb(231, 231, 22);
+    --color-fondoClaro: rgba(128, 128, 128, 0.493);
+    --color-parrafosGrisClaro: rgb(197, 196, 196);
+    --color-fondoGrisOscuro: rgb(100, 99, 99);
+    --letra-titulos: monospace;
+    --letra-parrafos: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 990px) {
+
+/* PORTADA */
+
+    #SectionPortada {
+        height: 100vh;
+    }
+
+    .divContenedorPortada {
+        height: 100%;
+        margin-top: 40px;
+        flex-direction: column;
+        width: max (700px 95%);
+        border: var(--color-amarillo) 2px solid;
+    }
+
+    .divImg {
+        width: 100%;
+        height: 35%;
+        background-color: rgb(231, 231, 22);
+        background-image: url(./jsPortadaChica.PNG);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        border: none;
+    }
+
+    .divTexto {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 65%;
+        order: 2;
+        border: none;
+        box-shadow: 10px 10px 15px;
+        gap: 20px;
+    }
+
+    .textLeft {
+        width: 100%;
+    }
+
+    .textRight {
+        width: 100%;
+    }
+
+/* CARROUSEL */
+.divTitulos{
+    width: 90%;
+    padding: 15px 0px;
+}
+
+
+}

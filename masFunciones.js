@@ -1069,7 +1069,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const div3 = document.querySelector(".div6_3");
     const div4 = document.querySelector(".div6_4");
     const div5 = document.querySelector(".div6_5");
-    const div6 = document.querySelector(".div6_6");
 
     const fondo = document.querySelector(".sectionGeneral");
 
@@ -1093,9 +1092,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fondo.style.backgroundColor = "orange";
     });
 
-    div6.addEventListener("mouseover", function () {
-        fondo.style.backgroundColor = "#1f1f1d";
-    });
+    
     //************************************************************************************************************************************************************** */
     //************************************************************************************************************************************************************** */
 
