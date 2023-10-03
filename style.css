@@ -505,7 +505,7 @@ input:focus {
 
 #sectionContacto {
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -527,7 +527,7 @@ input:focus {
 }
 
 .divContactoContenedor {
-    margin-top: 19px;
+    margin-top: 30px;
     display: flex;
     width: min(95%, 900px);
     border: solid 2px var(--color-amarillo);

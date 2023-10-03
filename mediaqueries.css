@@ -60,4 +60,31 @@
 }
 
 
+
+/* ***********************************************    CONTACTANOS    ********************************************************* */
+.divTitulos{
+    margin-top: 20px;
+}
+#sectionContacto{
+    min-height: 140vh;
+}
+
+
+.divContactoContenedor{
+    height: 100%;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.divImgContacto{
+    height: 40%;
+    width: 100%;
+}
+
+.divFormContacto{
+    height: 60%;
+    width: 100%;
+}
+
+
 }
