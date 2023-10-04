@@ -19,8 +19,7 @@
         height: 100%;
         margin-top: 40px;
         flex-direction: column;
-        width: max (700px 95%);
-        border: var(--color-amarillo) 2px solid;
+        width: max (700px 90%);
     }
 
     .divImg {
@@ -67,9 +66,7 @@
 
 
     /* ***********************************************    CONTACTANOS    ********************************************************* */
-    .divTitulos {
-        margin-top: 20px;
-    }
+   
 
     #sectionContacto {
         min-height: 150vh;
@@ -79,7 +76,7 @@
     .divContactoContenedor {
         height: 100%;
         flex-direction: column;
-        margin-bottom: 30px;
+        margin: 30px 0px;
     }
 
     .divImgContacto {
@@ -115,6 +112,13 @@
     .ingresarDiv, .registrarseDiv {
         width: 100%;
     }
+
+
+}
+
+@media (max-width: 990px) {
+
+    
 
 
 }
