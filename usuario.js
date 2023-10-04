@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var pMsj = document.createElement("p");
     //Agrego class pMsj para mostrar con el css
     pMsj.className = "pMsj";
-    //Agrego el texto del p
-    pMsj.textContent = "Por favor, ingrese un nombre de usuario";
+    pMsj.style.display = "flex";
+    pMsj.style.alignItems = "center"; 
     //guardo dentro del divMsj el pMsj
     divMsj.appendChild(pMsj);
     //logo de error para agregar al msj
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         //si ambos cumplen mostrar msj,limpiar campos y enviar form
-        //imagen de Ok para ingresar cuando cumple:
+        //logo Ok para ingresar cuando cumple:
         const imgOk = document.createElement("img");
         imgOk.className = "imgOk";
         imgOk.src = "./imagenesChicas/ok.png";

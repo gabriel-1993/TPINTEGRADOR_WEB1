@@ -446,7 +446,7 @@ input:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px;
+    padding: 20px;
     padding-bottom: 80px;
     justify-content: center;
     align-items: center;
@@ -464,7 +464,7 @@ input:focus {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 1.4rem;
     font-family: var(--letra-parrafos);
     font-weight: 500;
     color: white;
@@ -497,8 +497,13 @@ input:focus {
 /* imagen en la card para mensajes de validacion true  */
 /* imagen en la card para mensajes de validacion false */
 .imgOk {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
+}
+
+.imgError{
+    height: 25px;
+    width: 25px;
 }
 
 /* --------------------------------------------     CONTACTO HTML   -------------------------------------------*/
