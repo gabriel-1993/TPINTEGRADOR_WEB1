@@ -68,7 +68,7 @@ ul li a:hover {
     align-items: center;
     background-color: var(--color-fondoClaro);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 65px);
 }
 
 /* Contenedor del div con img JS y div texto */
@@ -118,7 +118,7 @@ ul li a:hover {
 .textRight ol {
     color: var(--color-parrafosGrisClaro);
     font-size: 1rem;
-    line-height: 1.2rem;
+    line-height: 1rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 }
@@ -132,7 +132,7 @@ ul li a:hover {
 .textRight h4 {
     color: var(--color-amarillo);
     font-size: 1.54rem;
-    font-family: monospace;
+    font-family: var(--letra-titulos);
 }
 
 .textRight h4 {
@@ -185,7 +185,6 @@ CARROUSEL **********************************************************************
     background-color: rgb(100, 99, 99);
     text-align: center;
     box-shadow: 10px 10px 15px;
-    width: ;
 }
 
 #SectionCarrousel h1 {
@@ -417,21 +416,7 @@ input:focus {
     height: 100%;
 }
 
-.footer {
-    height: 40px;
-    width: 100%;
-    background-color: var(--color-amarillo);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.footer h3 {
-    font-family: var(--letra-parrafos);
-    font-weight: 900;
-    font-size: 1.2rem;
-    text-align: center;
-}
 
 /* Card para mostrar msjs si los datos ingresados son incorrectos o validos con JS */
 .divMensaje {
@@ -519,27 +504,22 @@ input:focus {
     gap: 0;
 }
 
-.contactanosh1 {
-    color: var(--color-amarillo);
-    font-family: var(--letra-titulos);
-    font-size: 1.6rem;
-}
-
-.contactanosh2 {
-    font-size: 1rem;
-    color: var(--color-parrafosGrisClaro);
-    font-family: var(--letra-parrafos);
-}
 
 .divContactoContenedor {
     display: flex;
-    width: min(85%, 900px);
+    width: min(90%, 800px);
     max-width: 1200px;
     height: 360px;
-    border: solid 2px var(--color-amarillo);
+    border: solid 3px var(--color-amarillo);
     border-radius: 4px;
     background-color: var(--color-fondoGrisOscuro);
     box-shadow: 10px 10px 15px;
+    transition: transform 0.2s ease;
+}
+
+.divContactoContenedor:hover {
+    transform: scale(1.01);
+    /* Escala el botón al 95% de su tamaño original */
 }
 
 .divImgContacto {
@@ -564,7 +544,6 @@ input:focus {
 
 .contactoForm label {
     color: yellow;
-    margin-right: 10px;
 
 }
 
@@ -588,4 +567,21 @@ input:focus {
     transition: transform 0.2s ease;
     font-weight: 600;
     margin-top: 10px;
+}
+
+/* FOOTER */
+.footer {
+    height: 40px;
+    width: 100%;
+    background-color: var(--color-amarillo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer h3 {
+    font-family: var(--letra-parrafos);
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
 }

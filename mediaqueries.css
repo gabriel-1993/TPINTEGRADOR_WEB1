@@ -12,7 +12,8 @@
     /* PORTADA */
 
     #SectionPortada {
-        min-height: 130vh;
+        height: 175vh;
+        min-height: 100vh;
     }
 
     .divContenedorPortada {
@@ -34,10 +35,10 @@
     }
 
     .divTexto {
+        
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        height: 65%;
         order: 2;
         border: none;
         box-shadow: 10px 10px 15px;
@@ -57,7 +58,30 @@
         width: 100%;
     }
 
-    /* CARROUSEL */
+    /* ***********************************************    CARROUSEL    ********************************************************* */
+    #SectionCarrousel{
+        padding-top: 10px ;
+    }
+    
+    #SectionCarrousel h1{
+        font-size: 1.2rem;
+    }
+
+    #SectionCarrousel h2{
+        font-size: 0.9rem;
+    }
+
+    .carouselContenedor{
+
+        height: auto;
+        margin: 50px 0px;
+        width: 95%;
+    }
+    .carouselContenedor:hover {
+        transform: scale(1.00);
+    }
+
+    
     .divTitulos {
         width: 90%;
         padding: 15px 0px;
@@ -69,7 +93,7 @@
    
 
     #sectionContacto {
-        min-height: 150vh;
+        min-height: 100vh;
     }
 
 
@@ -80,33 +104,37 @@
     }
 
     .divImgContacto {
-        height: 43%;
+        height: 45%;
         width: 100%;
         background-position: bottom;
     }
 
     .divFormContacto {
-        height: 57%;
         width: 100%;
+    }
+    .contactoForm{
+        gap: 2px;
     }
 
 
     /* ******************************************      USUARIOS REGISTRO INICIAR SESION     **************************************** */
     #usuarioSection {
-        min-height: 220vh;
+        min-height: 160vh;
     }
 
 
     .usuarioDiv {
-        margin-top: 50px;
+        margin-top: 0px;
         flex-direction: column;
-        min-height: 200vh;
+        min-height: 150vh;
+        align-items: none;
     }
 
     .divImgHola {
         background-image: url(./imagenesChicas/bienvenido2.jpg);
-        height: 40%;
+        height: 45%;
         width: 100%;
+        border-bottom: solid 3px var(--color-amarillo);
     }
 
     .ingresarDiv, .registrarseDiv {
@@ -114,6 +142,11 @@
     }
 
 
+
+    /* FOOTER */
+    .footer h3{
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 990px) {
