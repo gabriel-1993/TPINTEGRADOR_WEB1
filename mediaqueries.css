@@ -157,7 +157,7 @@
 }
 
 /* MEDIA PARA CARROUSEL IMAGENES CEL EN VERTICAL */
-@media (max-width: 413px) {
+@media (max-width: 721px) {
 
     /* agrego hidden en x , al estirar las imagenes salen del ancho. */
     #SectionCarrousel{
