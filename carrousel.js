@@ -23,8 +23,28 @@ document.addEventListener("DOMContentLoaded", () => {
   
     function actualizarListaImagenes() {
       const screenWidth = window.innerWidth;
-      let imagenesGrandes = ['./imagenesGrandes/1.jpg', './imagenesGrandes/2.jpg', /* ... */];
-      let imagenesChicas = ['./imagenesChicas/1.jpg', './imagenesChicas/2.jpg', /* ... */];
+      let imagenesGrandes = [  './imagenesGrandes/1.jpg',
+      './imagenesGrandes/2.jpg',
+      './imagenesGrandes/3.jpg',
+      './imagenesGrandes/4.jpg',
+      './imagenesGrandes/5.jpg',
+      './imagenesGrandes/6.jpg',
+      './imagenesGrandes/7.jpg',
+      './imagenesGrandes/8.jpg',
+      './imagenesGrandes/9.jpg',
+      './imagenesGrandes/10.jpg',
+      './imagenesGrandes/11.jpg'  ];
+      let imagenesChicas = [  './imagenesGrandes/1.jpg',
+      './imagenesGrandes/2.jpg',
+      './imagenesGrandes/3.jpg',
+      './imagenesGrandes/4.jpg',
+      './imagenesGrandes/5.jpg',
+      './imagenesGrandes/6.jpg',
+      './imagenesGrandes/7.jpg',
+      './imagenesGrandes/8.jpg',
+      './imagenesGrandes/9.jpg',
+      './imagenesGrandes/10.jpg',
+      './imagenesGrandes/11.jpg'  ];
   
       if (screenWidth <= 391) {
         listaImagenes = imagenesChicas.slice();
