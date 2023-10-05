@@ -35,7 +35,7 @@
     }
 
     .divTexto {
-        
+
         flex-direction: column;
         justify-content: center;
         width: 100%;
@@ -48,7 +48,11 @@
     .textLeft {
         width: 100%;
     }
-    .textLeft h1, .textLeft h2,.textRight h3, .textRight h4 {
+
+    .textLeft h1,
+    .textLeft h2,
+    .textRight h3,
+    .textRight h4 {
         font-size: 1.5rem;
         padding: 0;
         margin: 0;
@@ -59,29 +63,30 @@
     }
 
     /* ***********************************************    CARROUSEL    ********************************************************* */
-    #SectionCarrousel{
-        padding-top: 10px ;
+    #SectionCarrousel {
+        padding-top: 10px;
     }
-    
-    #SectionCarrousel h1{
+
+    #SectionCarrousel h1 {
         font-size: 1.2rem;
     }
 
-    #SectionCarrousel h2{
+    #SectionCarrousel h2 {
         font-size: 0.9rem;
     }
 
-    .carouselContenedor{
+    .carouselContenedor {
 
         height: auto;
         margin: 50px 0px;
         width: 95%;
     }
+
     .carouselContenedor:hover {
         transform: scale(1.00);
     }
 
-    
+
     .divTitulos {
         width: 90%;
         padding: 15px 0px;
@@ -90,7 +95,7 @@
 
 
     /* ***********************************************    CONTACTANOS    ********************************************************* */
-   
+
 
     #sectionContacto {
         min-height: 100vh;
@@ -112,7 +117,8 @@
     .divFormContacto {
         width: 100%;
     }
-    .contactoForm{
+
+    .contactoForm {
         gap: 2px;
     }
 
@@ -137,21 +143,41 @@
         border-bottom: solid 3px var(--color-amarillo);
     }
 
-    .ingresarDiv, .registrarseDiv {
+    .ingresarDiv,
+    .registrarseDiv {
         width: 100%;
     }
 
 
 
     /* FOOTER */
-    .footer h3{
+    .footer h3 {
         font-size: 1rem;
     }
 }
 
-@media (max-width: 576px) {
+/* MEDIA PARA CARROUSEL IMAGENES CEL EN VERTICAL */
+@media (max-width: 413px) {
 
-    
+    /* agrego hidden en x , al estirar las imagenes salen del ancho. */
+    #SectionCarrousel{
+        overflow-x: hidden;
+    }
+    .carouselContenedor,
+    .divImgCarrousel {
+        width: 120%;
+    }
 
+    #imagen {
+        height: 90vh;
+    }
+
+    .btnAnterior {
+        left: 9%;
+    }
+
+    .btnSiguiente {
+        right: 9%;
+    }
 
 }
