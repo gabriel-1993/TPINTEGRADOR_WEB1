@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let imagenesGrandes = ['./imagenesGrandes/1.jpg', './imagenesGrandes/2.jpg', /* ... */];
       let imagenesChicas = ['./imagenesChicas/1.jpg', './imagenesChicas/2.jpg', /* ... */];
   
-      if (screenWidth <= 576) {
+      if (screenWidth <= 391) {
         listaImagenes = imagenesChicas.slice();
       } else {
         listaImagenes = imagenesGrandes.slice();
