@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+',
+      './imagenesGrandes/7.jpg',
+      './imagenesGrandes/8.jpg',
+      './imagenesGrandes/9.jpgdocument.addEventListener("DOMContentLoaded", () => {
     const etiquetaImagen = document.getElementById('imagen');
     const btnAnterior = document.querySelector('.btnAnterior');
     const btnSiguiente = document.querySelector('.btnSiguiente');
@@ -29,22 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
       './imagenesGrandes/4.jpg',
       './imagenesGrandes/5.jpg',
       './imagenesGrandes/6.jpg',
-      './imagenesGrandes/7.jpg',
-      './imagenesGrandes/8.jpg',
-      './imagenesGrandes/9.jpg',
       './imagenesGrandes/10.jpg',
       './imagenesGrandes/11.jpg'  ];
-      let imagenesChicas = [  './imagenesGrandes/1.jpg',
-      './imagenesGrandes/2.jpg',
-      './imagenesGrandes/3.jpg',
-      './imagenesGrandes/4.jpg',
-      './imagenesGrandes/5.jpg',
-      './imagenesGrandes/6.jpg',
-      './imagenesGrandes/7.jpg',
-      './imagenesGrandes/8.jpg',
-      './imagenesGrandes/9.jpg',
-      './imagenesGrandes/10.jpg',
-      './imagenesGrandes/11.jpg'  ];
+      let imagenesChicas = [  './imagenesChicas/1.jpg',
+      './imagenesChicas/2.jpg',
+      './imagenesChicas/3.jpg',
+      './imagenesChicas/4.jpg',
+      './imagenesChicas/5.jpg',
+      './imagenesChicas/6.jpg',
+      './imagenesChicas/7.jpg',
+      './imagenesChicas/8.jpg',
+      './imagenesChicas/9.jpg',
+      './imagenesChicas/10.jpg',
+      './imagenesChicas/11.jpg'  ];
   
       if (screenWidth <= 391) {
         listaImagenes = imagenesChicas.slice();
