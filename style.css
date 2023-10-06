@@ -27,10 +27,15 @@ header {
     box-shadow: 0px 10px 15px;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
 ul {
     display: flex;
     gap: 20px;
-    padding-right: 50px;
+    padding-right: 20px;
 }
 
 ul li a {
@@ -45,13 +50,22 @@ ul li a:hover {
     color: white;
 }
 
-.fa-user {
+.fa-user,
+.fa-bars {
+    margin-right: 30px;
     font-size: 1.6rem;
-    color: #11052e;
+    color: rgb(17, 5, 46);
 }
 
-.fa-user:hover {
+
+
+.fa-user:hover,
+.fa-bars:hover {
     color: white;
+}
+
+#MenuHamburugesa {
+    display: none;
 }
 
 /* --------------------------------------------     SECTION PORTADA   -----------------------------------*/
@@ -246,7 +260,7 @@ al contenido pero seguirá siendo un bloque. */
     box-shadow: 10px 10px 15px;
 }
 
-button {
+.btnAnterior, .btnSiguiente {
     font-size: 20px;
     position: absolute;
     top: 50%;
@@ -270,7 +284,376 @@ button {
 }
 
 
+
+
+
+
+
+
+
+/* *************************************************** MAS FUNCIONES ************************************************* */
+
+
+
+
+/* SECTION DE MAS FUNCIONES */
+.sectionGeneral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    padding: 0 30px;
+    background-color: var(--color-fondoClaro);
+    /* Espacio vacio para el fin de la pagina */
+    padding-bottom: 100px;
+}
+
+/* Section contenedor de cards consignas y h1: tp javascript... */
+.sectionGeneral h1 {
+    margin: 25px 0;
+    background-color: var(--color-fondoGrisOscuro);
+    box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.589);
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: yellow;
+    font-family: var(--letra-titulos);
+}
+
+/* Div/Card consigna individual */
+.sectionGeneral div {
+    border: solid 1px yellow;
+    border-radius: 8px;
+    padding: 18px;
+    background-color: var(--color-fondoGrisOscuro);
+    box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.589);
+    width: 90%;
+    font-family: var(--letra-parrafos);
+    color: var(--color-parrafosGrisClaro);
+}
+
+.sectionGeneral h3 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    color: yellow;
+    letter-spacing: 1px;
+    border-bottom: 1px solid yellow;
+}
+
+.sectionGeneral h2 {
+    font-family: var(--letra-titulos);
+    border-bottom: none;
+    padding: 10px 40px;
+}
+
+/* P con la consigna */
+.sectionGeneral p {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* div contenedor del boton ejecutar y el div modificado con js */
+.divBtnRes {
+    width: 100%;
+    display: flex;
+    padding: 0px;
+    gap: 25px;
+    border: none;
+    box-shadow: none;
+}
+
+.pResultado {
+    border: solid 1px yellow;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.842);
+    /* P oculto, al ejecutar la funcion aparece con js */
+    display: none;
+}
+
+
+.btnsMasFunciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 45px;
+    padding: 10px 0;
+    background-color: var(--color-amarillo);
+    border-radius: 4px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.842);
+    border: none;
+}
+
+.btnsMasFunciones:hover {
+    color: white;
+}
+
+/* consigna 3 colum al ul */
+.ulConsigna3 {
+    flex-direction: column;
+}
+
+/* Consigna 6 colores para cada cuadro */
+.div6 {
+    display: flex;
+    gap: 10px;
+    height: 150px;
+}
+
+.div6_1 {
+    background-color: blue;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+.div6_2 {
+    background-color: yellow;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+.div6_3 {
+    background-color: gray;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+.div6_4 {
+    background-color: green;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+.div6_5 {
+    background-color: orange;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* PARTE B TITULO */
+.h2MasFunciones {
+    margin: 40px 0;
+    color: white;
+    background-color: var(--color-fondoGrisOscuro);
+    box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.589);
+    border-radius: 10px;
+    padding: 20px 60px;
+    text-align: center;
+    font-size: 2.4rem;
+    color: yellow;
+}
+
+
+/* consigna 7b boton limpiar campos */
+.btn7bLimpiar {
+    background-color: rgb(19, 18, 18);
+    padding: 8px;
+    color: yellow;
+    font-weight: 300;
+    font-size: 12px;
+    margin-top: 8px;
+    box-shadow: none;
+    border: solid 1px rgb(208, 208, 208);
+    width: 100%;
+}
+
+
+/* Consigna 10b display para mostrar nueros ingresados y resultado */
+.div10b {
+    display: none;
+    width: 460px;
+    border: unset;
+    box-shadow: none;
+}
+
+.divDisplay10b {
+    padding: 0;
+    width: auto;
+    margin-bottom: 0px;
+    background-color: var(--color-parrafosGrisClaro);
+    border: solid 2px var(--color-amarillo);
+    box-shadow: rgba(0, 0, 0, 0.59) 13px 13px 6px;
+}
+
+/* Consigna10b contenedor de los botones */
+.divContenedorBtns10b {
+    border: solid 2px var(--color-amarillo);
+    margin-top: 8px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    background-color: var(--color-parrafosGrisClaro);
+
+}
+
+.divFilaBtns {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    width: auto;
+    justify-content: space-between;
+    border: none;
+    box-shadow: none;
+    background-color: var(--color-parrafosGrisClaro);
+}
+
+/* ultima fila botones calculadora */
+.divFilaBtns5 {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    width: auto;
+    border: none;
+    gap: 10px;
+    box-shadow: none;
+    background-color: var(--color-parrafosGrisClaro);
+}
+
+/* Consigna 10b botones calculadora */
+.btnCalculadora {
+    width: 18%;
+    height: 30px;
+    padding: 0px 8px;
+    letter-spacing: 0px;
+    box-shadow: none;
+    background-color: gray;
+    color: yellow;
+    border: none;
+
+}
+
+.btnCalculadoraIgual {
+    width: 59%;
+    height: 30px;
+    padding: 0px 8px;
+    letter-spacing: 0px;
+    box-shadow: none;
+    background-color: gray;
+    color: yellow;
+    border: none;
+}
+
+
+
+
+
+
+/* --------------------------------------------------     CONTACTO HTML   -------------------------------------------*/
+
+
+
+
+
+
+
+
+#sectionContacto {
+    width: 100%;
+    height: calc(100vh - 105px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    margin: 0;
+    gap: 0;
+}
+
+
+.divContactoContenedor {
+    display: flex;
+    width: min(90%, 800px);
+    max-width: 1200px;
+    height: 360px;
+    border: solid 3px var(--color-amarillo);
+    border-radius: 4px;
+    background-color: var(--color-fondoGrisOscuro);
+    box-shadow: 10px 10px 15px;
+    transition: transform 0.2s ease;
+}
+
+.divContactoContenedor:hover {
+    transform: scale(1.01);
+    /* Escala el botón al 95% de su tamaño original */
+}
+
+.divImgContacto {
+    background-image: url("./imagenesChicas/contactanos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+}
+
+.divFormContacto {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.contactoForm {
+    padding: 20px 0px;
+    width: 90%;
+}
+
+.contactoForm label {
+    color: yellow;
+
+}
+
+
+#nombreContacto,
+#correoElectronicoContacto,
+#mensajeContacto {
+    background-color: white;
+    padding: 6px;
+    color: yellow;
+    margin-right: 10px;
+}
+
+.btnEnviarContacto {
+    background-color: var(--color-amarillo);
+    border: solid 2px var(--color-amarillo);
+    font-size: 1.2rem;
+    color: var(--color-fondoGrisOscuro);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
 /* ****************************************************     HTML LOGIN  ******************************************** */
+
+
+
+
+
+
+
 /* Pantalla completa */
 #usuarioSection {
     padding-top: 0;
@@ -491,83 +874,12 @@ input:focus {
     width: 25px;
 }
 
-/* --------------------------------------------     CONTACTO HTML   -------------------------------------------*/
-
-#sectionContacto {
-    width: 100%;
-    height: calc(100vh - 105px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0px;
-    margin: 0;
-    gap: 0;
-}
 
 
-.divContactoContenedor {
-    display: flex;
-    width: min(90%, 800px);
-    max-width: 1200px;
-    height: 360px;
-    border: solid 3px var(--color-amarillo);
-    border-radius: 4px;
-    background-color: var(--color-fondoGrisOscuro);
-    box-shadow: 10px 10px 15px;
-    transition: transform 0.2s ease;
-}
-
-.divContactoContenedor:hover {
-    transform: scale(1.01);
-    /* Escala el botón al 95% de su tamaño original */
-}
-
-.divImgContacto {
-    background-image: url("./imagenesChicas/contactanos.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-}
-
-.divFormContacto {
-    width: 100%;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-}
-
-.contactoForm {
-    padding: 20px 0px;
-    width: 90%;
-}
-
-.contactoForm label {
-    color: yellow;
-
-}
 
 
-#nombreContacto,
-#correoElectronicoContacto,
-#mensajeContacto {
-    background-color: white;
-    padding: 6px;
-    color: yellow;
-    margin-right: 10px;
-}
+/* ******************************************************************************************************************** */
 
-.btnEnviarContacto {
-    background-color: var(--color-amarillo);
-    border: solid 2px var(--color-amarillo);
-    font-size: 1.2rem;
-    color: var(--color-fondoGrisOscuro);
-    cursor: pointer;
-    border-radius: 4px;
-    transition: transform 0.2s ease;
-    font-weight: 600;
-    margin-top: 10px;
-}
 
 /* FOOTER */
 .footer {
