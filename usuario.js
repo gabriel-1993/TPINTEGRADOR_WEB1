@@ -1,5 +1,3 @@
-
-
 // VALIDAR FORMULARIO INGRESO  ******************************************************************************************
 
 // JS inicia siempre y cuando el DOM este cargado por completo  *********************************************************
@@ -250,8 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // }); del event form registro
     });
-
-
 
 
 

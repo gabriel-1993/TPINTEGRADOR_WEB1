@@ -409,35 +409,35 @@ al contenido pero seguirá siendo un bloque. */
     height: 150px;
 }
 
-.div6_1 {
+#div6_1 {
     background-color: blue;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
-.div6_2 {
+#div6_2 {
     background-color: yellow;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
-.div6_3 {
+#div6_3 {
     background-color: gray;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
-.div6_4 {
+#div6_4 {
     background-color: green;
     box-shadow: none;
     border: none;
     cursor: pointer;
 }
 
-.div6_5 {
+#div6_5 {
     background-color: orange;
     box-shadow: none;
     border: none;
