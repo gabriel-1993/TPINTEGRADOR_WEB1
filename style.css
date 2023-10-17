@@ -358,7 +358,7 @@ al contenido pero seguirá siendo un bloque. */
 }
 
 /* div contenedor del boton ejecutar y el div modificado con js */
-.divBtnRes {
+#divBtnRes {
     width: 100%;
     display: flex;
     padding: 0px;
@@ -815,7 +815,6 @@ input:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    padding-bottom: 80px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -837,7 +836,6 @@ input:focus {
     font-weight: 500;
     color: white;
     width: 100%;
-    padding-bottom: 20px;
     gap: 4px;
 }
 
@@ -850,6 +848,7 @@ input:focus {
     font-weight: 700;
     color: white;
     cursor: pointer;
+    order: 2;
 }
 
 .btnAceptar:hover {
