@@ -622,9 +622,8 @@ al contenido pero seguirá siendo un bloque. */
 #nombreContacto,
 #correoElectronicoContacto,
 #mensajeContacto {
-    background-color: white;
     padding: 6px;
-    color: yellow;
+    color: black;
     margin-right: 10px;
 }
 
@@ -824,6 +823,7 @@ input:focus {
 /* display block para mostrar el cartel agregandole esta class al div con js */
 .mostrarMsj {
     display: flex;
+    flex-direction: column;
 }
 
 .pMsj {
@@ -864,15 +864,19 @@ input:focus {
 /* imagen en la card para mensajes de validacion true  */
 /* imagen en la card para mensajes de validacion false */
 .imgOk {
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    width: 40px;
 }
 
 .imgError {
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    width: 40px;
 }
 
+/* Borde rojo para el campo con error */
+.error {
+    border: 2px dashed red;
+   }
 
 
 

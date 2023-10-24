@@ -1,11 +1,4 @@
-
-
-
-
-
 //Trabajo Práctico en JS realizado en WEB1 ULP :
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -1064,11 +1057,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //Realiza una página que muestre cinco cuadrados de diferentes colores. Cuando el ratón pase por encima de alguno de ellos
     // el color de fondo será del color de relleno del cuadrado.
 
-    const div1 = document.querySelector(".div6_1");
-    const div2 = document.querySelector(".div6_2");
-    const div3 = document.querySelector(".div6_3");
-    const div4 = document.querySelector(".div6_4");
-    const div5 = document.querySelector(".div6_5");
+    const div1 = document.querySelector("#div6_1");
+    const div2 = document.querySelector("#div6_2");
+    const div3 = document.querySelector("#div6_3");
+    const div4 = document.querySelector("#div6_4");
+    const div5 = document.querySelector("#div6_5");
 
     const fondo = document.querySelector(".sectionGeneral");
 
@@ -1359,9 +1352,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         div10b.style.display = "block";
-
-
-
 
 
     }

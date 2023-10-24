@@ -2,6 +2,7 @@
 
 // JS inicia siempre y cuando el DOM este cargado por completo  *********************************************************
 document.addEventListener("DOMContentLoaded", () => {
+    
     //captura formingreso, user, pass, btnIngresar, divCardMsjsOkError, btnAceptar
     const formIngresar = document.getElementById("ingresoForm");
     const usuarioIngresar = document.getElementById("nombreIngresar");
@@ -16,13 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
     //Agrego class pMsj para mostrar con el css
     pMsj.className = "pMsj";
     pMsj.style.display = "flex";
-    pMsj.style.alignItems = "center"; 
+    pMsj.style.alignItems = "center";
     //guardo dentro del divMsj el pMsj
     divMsj.appendChild(pMsj);
     //logo de error para agregar al msj
     const imgError = document.createElement("img");
     imgError.className = "imgError";
     imgError.src = "./imagenesChicas/error.png";
+    //logo Ok para ingresar cuando cumple:
+    const imgOk = document.createElement("img");
+    imgOk.className = "imgOk";
+    imgOk.src = "./imagenesChicas/ok.png";
 
 
     //Expresion regular para usuario
@@ -43,12 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
             pMsj.style.fontSize = "1.3rem";
             pMsj.textContent = "Error: El campo de usuario está vacío.";
             pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
             divMsj.classList.add("mostrarMsj");
         } else if (!usuarioExp.test(usuario)) {
             // El usuario no cumple con los criterios letras azAZ09, min 6 letras max 12, muestra el mensaje de error
             pMsj.style.fontSize = "1rem";
             pMsj.textContent = "Error: El usuario puede combinar letras y números, mínimo 6 caracteres y máximo 12.";
             pMsj.appendChild(imgError);
+            btnMsjAceptar.classList.add("hoverError");
             divMsj.classList.add("mostrarMsj");
         } else {
             // Usuario valido guardo boolean para comparar al final
@@ -85,11 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        //si ambos cumplen mostrar msj,limpiar campos y enviar form
-        //logo Ok para ingresar cuando cumple:
-        const imgOk = document.createElement("img");
-        imgOk.className = "imgOk";
-        imgOk.src = "./imagenesChicas/ok.png";
 
         if (usuarioIngresar.value === "" && passwordIngresar.value === "") {
             pMsj.textContent = "Datos vacios, ingrese usuario y password";
@@ -207,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const correoRegistro = document.getElementById("correoRegistro");
         const correo = correoRegistro.value.trim();
         const expCorreo = /^[a-zA-Z0-9-_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        let correoCumple=false;
+        let correoCumple = false;
         if (correo === "") {
             // Msj error para correo ingresado vacio 
             pMsj.style.fontSize = "1.2rem";
@@ -223,15 +225,15 @@ document.addEventListener("DOMContentLoaded", () => {
             btnMsjAceptar.classList.add("hoverError");
             divMsj.classList.add("mostrarMsj");
         } else {
-            correoCumple=true;
+            correoCumple = true;
         }
 
-        if(usuarioCumple && passwordCumple && correoCumple){
-           //limpiar campos
+        if (usuarioCumple && passwordCumple && correoCumple) {
+            //limpiar campos
             usuarioIngresar.value = "";
             passwordRegistro.value = "";
-            passwordRegistro2.value="";
-            correoRegistro.value="";
+            passwordRegistro2.value = "";
+            correoRegistro.value = "";
             //mostrar msj
             pMsj.textContent = "¡ Bienvenido... registro exitoso !";
             pMsj.appendChild(imgOk);
@@ -246,12 +248,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    // }); del event form registro
+        // }); del event form registro
     });
 
 
 
-//cierre });  document.addEventListener("DOMContentLoaded", () => { ... ejecuta JS luego de la carga del DOM
+    //cierre });  document.addEventListener("DOMContentLoaded", () => { ... ejecuta JS luego de la carga del DOM
 });
 
 

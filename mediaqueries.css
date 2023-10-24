@@ -232,6 +232,11 @@
 
 @media (max-width: 768px) {
 
+    /* div contenedor de msjs de error */
+    .divMensaje{
+        width: min(420px , 85%);
+    }
+
     PARA MENU HAMBURGUESA
 
     /* SECTION DE MAS FUNCIONES */
