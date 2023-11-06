@@ -94,7 +94,33 @@ document.addEventListener("DOMContentLoaded", () => {
             passwordCumple = false;
         }
 
+      
+
         mostrarMensajes();
+
+         //Mostrar datos ingresados
+         if(usuarioCumple && passwordCumple ){
+            const ulDatos = document.createElement("ul");
+            const liDatos = document.createElement("li");
+            const liUser = document.createElement("li");
+            const liPass = document.createElement("li");
+
+            ulDatos.style.display = "flex";
+            ulDatos.style.flexDirection = "column";
+            ulDatos.style.color="green";
+            ulDatos.style.fontSize="1.2rem";
+            ulDatos.style.gap="5px";
+
+            liDatos.innerHTML="Datos ingresados:";
+            liUser.innerHTML="Usuario: "+usuario;
+            liPass.innerHTML="Password: "+password;
+
+            ulDatos.appendChild(liDatos);
+            ulDatos.appendChild(liUser);
+            ulDatos.appendChild(liPass);
+
+            divMsj.appendChild(ulDatos);
+        }
 
         // Evento click para la tarjeta de mensajes
         btnMsjAceptar.addEventListener('click', function () {
@@ -175,13 +201,44 @@ document.addEventListener("DOMContentLoaded", () => {
             correoCumple = false;
         }
 
+        
+      
         mostrarMensajes();
+
+        //Mostrar datos ingresados
+        if(usuarioRegistroCumple && passwordRegistroCumple && correoCumple){
+            const ulDatos = document.createElement("ul");
+            const liDatos = document.createElement("li");
+            const liUser = document.createElement("li");
+            const liPass = document.createElement("li");
+            const liCorreo = document.createElement("li");
+
+            ulDatos.style.display = "flex";
+            ulDatos.style.flexDirection = "column";
+            ulDatos.style.color="green";
+            ulDatos.style.fontSize="1.2rem";
+            ulDatos.style.gap="5px";
+
+            liDatos.innerHTML="Datos ingresados:";
+            liUser.innerHTML="Usuario: "+usuario;
+            liPass.innerHTML="Password: "+password;
+            liCorreo.innerHTML="Correo: "+correo;
+
+            ulDatos.appendChild(liDatos);
+            ulDatos.appendChild(liUser);
+            ulDatos.appendChild(liPass);
+            ulDatos.appendChild(liCorreo);
+
+            divMsj.appendChild(ulDatos);
+        }
+
 
         // Evento click para la tarjeta de mensajes
         btnMsjAceptar.addEventListener('click', function () {
             // Ocultar el div con los mensajes
             divMsj.classList.remove("mostrarMsj");
-            if (usuarioRegistroCumple && passwordRegistroCumple && correoCumple ) {
+            if (usuarioRegistroCumple && passwordRegistroCumple && correoCumple) {
+
                 // Enviar el formulario
                 registroForm.submit();
             }

@@ -104,12 +104,40 @@ formulario.addEventListener("submit", function (event) {
         btnMsjAceptar.classList.add("hoverOk");
         mostrarMensajes();
 
+        const ulDatosIngresados = document.createElement("ul");
+        divMsj.appendChild(ulDatosIngresados);
+        const liTitulo = document.createElement("li");
+        const liNombre = document.createElement("li");
+        const liCorreo = document.createElement("li");
+        const liMsj = document.createElement("li");
+
+
+        //MOSTRAR DATOS INGRESADOS
+        ulDatosIngresados.style.display = "flex";
+        ulDatosIngresados.style.flexDirection = "column";
+        ulDatosIngresados.style.color="green";
+        ulDatosIngresados.style.fontSize="1.2rem";
+        ulDatosIngresados.style.gap="5px";
+        liTitulo.innerHTML = "Datos enviados:";
+        liNombre.innerHTML = "Nombre: "+nombre;
+        liCorreo.innerHTML = "Correo: "+correo;
+        liMsj.innerHTML = "Mensaje: "+mensaje;
+
+        ulDatosIngresados.appendChild(liTitulo);
+        ulDatosIngresados.appendChild(liNombre);
+        ulDatosIngresados.appendChild(liCorreo);
+        ulDatosIngresados.appendChild(liMsj);
+
+
         // Evento click para la card de mensajes
         btnMsjAceptar.addEventListener('click', function () {
             //ocultamos el div con los mensajes
             divMsj.classList.remove("mostrarMsj");
             // Enviar el formulario
             formulario.submit();
+
+
+
         });
     } else {
         mostrarMensajes();
