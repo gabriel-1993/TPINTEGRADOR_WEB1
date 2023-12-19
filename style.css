@@ -355,6 +355,7 @@ al contenido pero seguirá siendo un bloque. */
     margin-bottom: 10px;
     font-size: 1rem;
     font-weight: 500;
+    color: #fff;
 }
 
 /* div contenedor del boton ejecutar y el div modificado con js */
@@ -473,6 +474,13 @@ al contenido pero seguirá siendo un bloque. */
     width: 100%;
 }
 
+ #divBtnRes9{
+    border: none;
+    box-shadow: none;
+}
+.div9b{
+    border: 0px;
+}
 
 /* Consigna 10b display para mostrar nueros ingresados y resultado */
 .div10b {

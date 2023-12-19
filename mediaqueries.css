@@ -156,6 +156,13 @@
     .footer h3 {
         font-size: 1rem;
     }
+
+    /* Consigna 11b imagen de messi */
+    .messiResponsive {
+        width: 100%;
+    }
+
+
 }
 
 /* MEDIA PARA CARROUSEL IMAGENES CEL EN VERTICAL */
@@ -200,7 +207,7 @@
         letter-spacing: 1px;
     }
 
-    #SectionPortada{
+    #SectionPortada {
         padding-top: 35px;
     }
 
@@ -228,83 +235,75 @@
         right: 15%;
     }
 
+
+
     /* *************************************************      MAS FUNCIONES   ************************************************ */
 
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
 
-    /* div contenedor de msjs de error */
-    .divMensaje{
-        width: min(420px , 85%);
+        /* div contenedor de msjs de error */
+        .divMensaje {
+            width: min(420px, 85%);
+        }
+
+        PARA MENU HAMBURGUESA
+
+        /* SECTION DE MAS FUNCIONES */
+        .sectionGeneral {
+            width: 100%;
+            padding: 0;
+            padding-bottom: 40px;
+        }
+
+        .sectionGeneral h1 {
+            width: 90%;
+        }
+
+        .sectionGeneral div {
+            width: 92%;
+        }
+
+        #divBtnRes {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btnsMasFunciones {
+            width: 95%;
+            padding: 0
+        }
+
+        .pResultado {
+            width: 95%;
+        }
+
+        /* tabla en resoluciones chicas */
+        .div9 {
+            padding: 15px 0;
+        }
+
+        .div9 h3 {
+            padding-left: 20px;
+        }
+
+        #divBtnRes9 {
+            width: 100%;
+        }
+
+        .p9 {
+            width: 100%;
+            padding: 0;
+        }
+
+        /* Consigba 10b segunda imagen de messi al pasar el mouse por la primera */
+        .messiResponsive2 {
+            background-size: cover;
+        }
+
+
+
     }
 
-    PARA MENU HAMBURGUESA
-
-    /* SECTION DE MAS FUNCIONES */
-    .sectionGeneral {
-        width: 100%;
-        padding: 0;
-        padding-bottom: 40px;
-    }
-
-    .sectionGeneral h1 {
-        width: 90%;
-    }
-
-    .sectionGeneral div {
-        width: 92%;
-    }
-
-    #divBtnRes {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .btnsMasFunciones {
-        width: 95%;
-        padding: 0
-    }
-
-    .pResultado {
-        width: 95%;
-    }
-
-    /* tabla en resoluciones chicas */
-    .div9 {
-        padding: 15px 0;
-    }
-
-    .div9 h3 {
-        padding-left: 20px;
-    }
-
-    #divBtnRes9 {
-        width: 100%;
-    }
-
-    .p9 {
-        width: 100%;
-        padding: 0;
-    }
-
-    /* Consigna 10b display para mostrar nueros ingresados y resultado */
-    .div10b {
-        width: min(100%, 350px);
-        padding: 0;
-    }
-
-    .divFilaBtns5 {
-        gap: 5px;
-    }
-
-    /* Consigna 10b botones calculadora */
-    .btnCalculadora {
-        width: 19%;
-        height: 30px;
-    }
-
-
-    
-}
 
 }

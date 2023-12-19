@@ -1085,7 +1085,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fondo.style.backgroundColor = "orange";
     });
 
-    
+
     //************************************************************************************************************************************************************** */
     //************************************************************************************************************************************************************** */
 
@@ -1251,112 +1251,177 @@ document.addEventListener("DOMContentLoaded", () => {
     //************************************************************************************************************************************************************** */
     //************************************************************************************************************************************************************** */
 
+    // Realice una página que luego de 3 segundos de haberse cargado se dirija hacia la página https://www.google.com.ar
 
-    //Realiza una página que implemente una calculadora aritmética.
-    //cálculos aritméticos básicos, entre los que se pueden mencionar suma, resta, multiplicación, división.
-    //Asi como otras operaciones más complejas como porcentajes, raíz cuadrada, seno y coseno
 
-    const div10b = document.querySelector(".div10b");
     const btn10b = document.querySelector(".btn10b");
-    const sen = document.querySelector(".bSen");
-    const cos = document.querySelector(".bCos");
-    const raiz = document.querySelector(".bRaiz");
-    const multi = document.querySelector(".bMulti");
-
-
-
+    const p10b = document.querySelector(".p10b");
 
 
     function ejercicio10b() {
+        let contador = 0;
 
-        let displayValue = '';
-        let currentValue = 0;
-        let currentOperator = '';
 
-        function agregarDisplay(value) {
-            displayValue += value;
-            document.getElementById('numIngresado').value = displayValue;
-        }
+        // Mostrar el contador cada segundo y abrir la nueva pestaña después de 3 segundos
+        var intervalo = setInterval(function () {
+            contador++;
+            p10b.style.display = "block";
+            p10b.style.fontSize = "2rem";
+            p10b.innerHTML = contador;
+            if (contador === 3) {
+                // Abrir una nueva pestaña con la URL deseada después de 3 segundos
+                window.open('https://google.com.ar', '_blank');
 
-        function clearDisplay() {
-            displayValue = '';
-            document.getElementById('numIngresado').value = '';
-        }
-
-        function performOperation(operator) {
-            if (currentOperator !== '') {
-                calculateResult();
+                // Limpiar el intervalo
+                clearInterval(intervalo);
             }
-            currentValue = parseFloat(displayValue);
-            currentOperator = operator;
-            clearDisplay();
-        }
-
-        function calculateResult() {
-            const newValue = parseFloat(displayValue);
-            switch (currentOperator) {
-                case '+':
-                    currentValue += newValue;
-                    break;
-                case '-':
-                    currentValue -= newValue;
-                    break;
-                case '*':
-                    currentValue *= newValue;
-                    break;
-                case '/':
-                    currentValue /= newValue;
-                    break;
-            }
-            displayValue = currentValue.toString();
-            currentOperator = '';
-            document.getElementById('display').value = displayValue;
-        }
-
-        // Función para calcular el módulo (resto)
-        function calculateModulus() {
-            const newValue = parseFloat(displayValue);
-            currentValue %= newValue;
-            displayValue = currentValue.toString();
-            document.getElementById('numIngresado').innerText = displayValue;
-        }
-
-        function calculatePercentage() {
-            currentValue = parseFloat(displayValue) / 100;
-            displayValue = currentValue.toString();
-            document.getElementById('display').value = displayValue;
-        }
-
-        function calculateSquareRoot() {
-            currentValue = Math.sqrt(parseFloat(displayValue));
-            displayValue = currentValue.toString();
-            document.getElementById('display').value = displayValue;
-        }
-
-        function calculateSine() {
-            currentValue = Math.sin(parseFloat(displayValue));
-            displayValue = currentValue.toString();
-            document.getElementById('display').value = displayValue;
-        }
-
-        function calculateCosine() {
-            currentValue = Math.cos(parseFloat(displayValue));
-            displayValue = currentValue.toString();
-            document.getElementById('display').value = displayValue;
-        }
-
-        // Función para eliminar el último dígito
-        function deleteLastDigit() {
-            displayValue = displayValue.slice(0, -1);
-            document.getElementById('numIngresado').innerText = displayValue;
-        }
-
-        div10b.style.display = "block";
-
-
+        }, 1000);
     }
 
     btn10b.addEventListener('click', ejercicio10b);
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
+
+    // Realiza una página que muestre una imagen que cambie cuando el ratón pasa por encima de la imagen y que vuelva a cambiar cuando salga de ella.
+
+    const btn11b = document.querySelector(".btn11b");
+    const div11b = document.querySelector(".div11b");
+
+    function ejercicio11b() {
+        div11b.innerHTML = "";
+        div11b.style.display = "flex";
+        div11b.style.justifyContent = "center";
+        div11b.style.alignItems = "center"
+
+        let imagen = document.createElement('img');
+
+        // Asignar una URL a la imagen
+        imagen.src = 'imagenesGrandes/messi.avif';
+        imagen.style.height = "400px";
+        imagen.style.borderRadius = "8px";
+        imagen.classList.add("messiResponsive");
+        //Agregar img dentro del div 
+        div11b.appendChild(imagen);
+
+        imagen.classList.add('cambiar-imagen11b');
+        // Agregar evento para cambiar la imagen al pasar el mouse
+        imagen.addEventListener('mouseover', function () {
+            imagen.src = './imagenesGrandes/messi2.webp';
+
+        });
+
+        //  Agregar evento para cambiar la imagen al quitar el mouse de la imagen
+        imagen.addEventListener('mouseout', function () {
+            imagen.src = 'imagenesGrandes/messi.avif';
+            imagen.classList.add("messiResponsive2");
+
+        });
+    }
+
+    btn11b.addEventListener('click', ejercicio11b);
+
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
+    // Realizar una página que permita modificar (añadir, borrar, modificar) al gusto del usuario los contenidos de un elemento SELECT de un formulario.
+
+    const div12b = document.querySelector(".div12b");
+    const btn12b = document.querySelector(".btn12b");
+
+    function ejercicio12b() {
+        let indice = 0;
+        let selectElem = document.createElement('select');
+        selectElem.style.width = "100%";
+        selectElem.style.marginBottom="30px";
+
+        let btnAgregar = document.createElement('button');
+        btnAgregar.innerHTML = "Agregar";
+
+        let btnModificar = document.createElement('button');
+        btnModificar.innerHTML = "Modificar"
+
+        let btnEliminar = document.createElement('button');
+        btnEliminar.innerHTML = "Eliminar"
+
+
+        div12b.appendChild(selectElem);
+        div12b.appendChild(btnAgregar);
+        div12b.appendChild(btnModificar);
+        div12b.appendChild(btnEliminar);
+        div12b.style.display = "flex";
+        div12b.style.flexDirection="column";
+        div12b.style.gap = "5px";
+
+
+        //AGREGAR
+
+        btnAgregar.addEventListener('click', function () {
+            let palabraIngresada = prompt('Ingrese la palabra que desea agregar:');
+            console.log(palabraIngresada);
+            palabraIngresada = palabraIngresada.toUpperCase().trim();
+
+            // Verificar si la palabra ya existe en el select
+            let yaExiste = Array.from(selectElem.options).some(opcion => opcion.text.toUpperCase() === palabraIngresada);
+
+            if (!yaExiste && palabraIngresada !== "") {
+                indice++;
+                // Agregar opciones al select
+                let opcion = document.createElement('option');
+                opcion.value = indice;
+                opcion.text = palabraIngresada;
+                selectElem.appendChild(opcion);
+            } else if (yaExiste) {
+                alert('Error:La palabra ya existe en el select.');
+            } else {
+                alert('Error:Palabra ingresada vacia, no se agrego ningun elemento al select: ');
+            }
+
+        });
+
+        //MODIFICAR
+        btnModificar.addEventListener('click', function(){
+
+            if (selectElem.options.length === 0) {
+                alert('Error: El select está vacío, no hay opciones para modificar.');
+            } else {
+                // Obtener la opcion seleccionada
+                let opcionSeleccionada = selectElem.options[selectElem.selectedIndex];
+                let nuevaPalabra = prompt('Ingrese la modificacion para opcion seleccionada:');
+                nuevaPalabra = nuevaPalabra.toUpperCase().trim();
+        
+                if (nuevaPalabra !== "") {
+                    // Verificar si la nueva palabra ya existe en el select
+                    let yaExiste = Array.from(selectElem.options).some(opcion => opcion.text.toUpperCase() === nuevaPalabra);
+        
+                    if (!yaExiste) {
+                        // Modificar el texto de la opción seleccionada
+                        opcionSeleccionada.text = nuevaPalabra;
+                    } else {
+                        alert('Error: La palabra ya existe en el select.');
+                    }
+                } else {
+                    alert('Error: Palabra ingresada vacía, no se realizó ninguna modificación.');
+                }
+            }
+
+        })
+
+        //ELIMINAR
+
+        btnEliminar.addEventListener('click', function(){
+            if (selectElem.options.length === 0) {
+                alert('Error: El select está vacío,no hay opcion para eliminar.');
+            } else {
+                // Obtener la opcion seleccionada
+                let opcionSeleccionada = selectElem.options[selectElem.selectedIndex];
+        
+                // Eliminar la opcion seleccionada
+                selectElem.removeChild(opcionSeleccionada);
+            }
+        })
+
+    }
+
+    btn12b.addEventListener('click', ejercicio12b);
 
     // }); final para cargar el Js luego del DOM
 });
