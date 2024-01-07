@@ -1057,33 +1057,50 @@ document.addEventListener("DOMContentLoaded", () => {
     //Realiza una página que muestre cinco cuadrados de diferentes colores. Cuando el ratón pase por encima de alguno de ellos
     // el color de fondo será del color de relleno del cuadrado.
 
-    const div1 = document.querySelector("#div6_1");
-    const div2 = document.querySelector("#div6_2");
-    const div3 = document.querySelector("#div6_3");
-    const div4 = document.querySelector("#div6_4");
-    const div5 = document.querySelector("#div6_5");
+    const btn6b = document.querySelector(".btn6b");
 
-    const fondo = document.querySelector(".sectionGeneral");
+    function ejercicio6b() {
 
-    div1.addEventListener("mouseover", function () {
-        fondo.style.backgroundColor = "blue";
-    });
+        //Mostrar cuadros con colores
+        const div6b = document.querySelector(".div6b");
+        div6b.style.display="flex";
+        div6b.style.gap="8px";
+        div6b.style.height="110px";
 
-    div2.addEventListener("mouseover", function () {
-        fondo.style.backgroundColor = "yellow";
-    });
+        const div1 = document.querySelector("#div6_1");
+        const div2 = document.querySelector("#div6_2");
+        const div3 = document.querySelector("#div6_3");
+        const div4 = document.querySelector("#div6_4");
+        const div5 = document.querySelector("#div6_5");
 
-    div3.addEventListener("mouseover", function () {
-        fondo.style.backgroundColor = "gray";
-    });
+        const fondo = document.querySelector(".sectionGeneral");
 
-    div4.addEventListener("mouseover", function () {
-        fondo.style.backgroundColor = "green";
-    });
+        div1.addEventListener("mouseover", function () {
+            fondo.style.backgroundColor = "blue";
+        });
 
-    div5.addEventListener("mouseover", function () {
-        fondo.style.backgroundColor = "orange";
-    });
+        div2.addEventListener("mouseover", function () {
+            fondo.style.backgroundColor = "yellow";
+        });
+
+        div3.addEventListener("mouseover", function () {
+            fondo.style.backgroundColor = "gray";
+        });
+
+        div4.addEventListener("mouseover", function () {
+            fondo.style.backgroundColor = "green";
+        });
+
+        div5.addEventListener("mouseover", function () {
+            fondo.style.backgroundColor = "orange";
+        });
+
+    }
+
+    btn6b.addEventListener('click', ejercicio6b);
+
+
+
 
 
     //************************************************************************************************************************************************************** */
@@ -1182,6 +1199,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const div9b = document.querySelector(".div9b");
 
     function ejercicio9b() {
+        div9b.style.border="solid 1px yellow";
+        div9b.style.boxShadow="13px 13px 6px rgba(0, 0, 0, 0.589)";
         div9b.innerHTML = '<p>Evaluación teorica</p>' +
             '<p>¿Qué es una variable en programación?' +
             '<form id="formulario1">' +
@@ -1331,7 +1350,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let indice = 0;
         let selectElem = document.createElement('select');
         selectElem.style.width = "100%";
-        selectElem.style.marginBottom="30px";
+        selectElem.style.marginBottom = "30px";
 
         let btnAgregar = document.createElement('button');
         btnAgregar.innerHTML = "Agregar";
@@ -1348,7 +1367,7 @@ document.addEventListener("DOMContentLoaded", () => {
         div12b.appendChild(btnModificar);
         div12b.appendChild(btnEliminar);
         div12b.style.display = "flex";
-        div12b.style.flexDirection="column";
+        div12b.style.flexDirection = "column";
         div12b.style.gap = "5px";
 
 
@@ -1378,7 +1397,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         //MODIFICAR
-        btnModificar.addEventListener('click', function(){
+        btnModificar.addEventListener('click', function () {
 
             if (selectElem.options.length === 0) {
                 alert('Error: El select está vacío, no hay opciones para modificar.');
@@ -1387,11 +1406,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 let opcionSeleccionada = selectElem.options[selectElem.selectedIndex];
                 let nuevaPalabra = prompt('Ingrese la modificacion para opcion seleccionada:');
                 nuevaPalabra = nuevaPalabra.toUpperCase().trim();
-        
+
                 if (nuevaPalabra !== "") {
                     // Verificar si la nueva palabra ya existe en el select
                     let yaExiste = Array.from(selectElem.options).some(opcion => opcion.text.toUpperCase() === nuevaPalabra);
-        
+
                     if (!yaExiste) {
                         // Modificar el texto de la opción seleccionada
                         opcionSeleccionada.text = nuevaPalabra;
@@ -1407,13 +1426,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //ELIMINAR
 
-        btnEliminar.addEventListener('click', function(){
+        btnEliminar.addEventListener('click', function () {
             if (selectElem.options.length === 0) {
                 alert('Error: El select está vacío,no hay opcion para eliminar.');
             } else {
                 // Obtener la opcion seleccionada
                 let opcionSeleccionada = selectElem.options[selectElem.selectedIndex];
-        
+
                 // Eliminar la opcion seleccionada
                 selectElem.removeChild(opcionSeleccionada);
             }
@@ -1422,6 +1441,100 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btn12b.addEventListener('click', ejercicio12b);
+
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
+    // Realice una página que escriba en un campo de texto una cadena. La cadena debe ser
+    // escrita de a una letra por vez y el tiempo entre escritura de la letra debe ser 700ms.
+
+    const btn13b = document.querySelector(".btn13b");
+    const p13b = document.querySelector(".p13b");
+
+    // Función para escribir la cadena letra por letra
+    function escribirCadena(index) {
+        let cadena = "Una letra a la vez, para imitar una maquina de escribir...";
+        // Asegurarse de no exceder la longitud de la cadena
+        if (index < cadena.length) {
+            // Obtener la letra actual
+            var letra = cadena.charAt(index);
+
+            // Agregar la letra al campo de texto
+            p13b.innerHTML += letra;
+
+            // Llamar a la función recursivamente para la siguiente letra después de 700ms
+            setTimeout(function () {
+                escribirCadena(index + 1);
+            }, 700);
+        }
+    }
+
+    function ejercicio13b() {
+        p13b.innerHTML = "";
+        p13b.style.display = "flex";
+        p13b.style.fontSize = "1.2rem";
+        p13b.style.color = "yellow";
+        // Iniciar el proceso de escritura
+        escribirCadena(0);
+    }
+
+    btn13b.addEventListener('click', ejercicio13b)
+
+    //************************************************************************************************************************************************************** */
+    //************************************************************************************************************************************************************** */
+    // Realice un formulario que disponga de dos cajas de texto para verificar usuario y password. El usuario debe comenzar 
+    // con una letra mayúscula y tener al menos 3 números en cualquier posición. El password debe tener una longitud mínima de 8 caracteres,
+    //  comenzar con un número y terminar con una letra mayúscula seguida de otro número.
+
+    const btn14B = document.querySelector(".btn14b");
+    const form14b = document.querySelector("#form14b");
+    const user = document.querySelector("#usuario");
+    const pass = document.querySelector("#password");
+    const btnForm14b = document.querySelector("#btnForm14b");
+
+    function ejercicio14b() {
+        form14b.style.display = "flex";
+        form14b.style.flexDirection = "column";
+
+        // Evento de envío del formulario
+        form14b.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const usuario = user.value.trim();
+            const password = pass.value.trim();
+
+            // validar el usuario
+            let usuarioCumple = false;
+            let regexUsuario = /^[A-Z][a-zA-Z0-9]*[0-9]{3,}$/;
+            if (usuario.match(regexUsuario) && usuario.length > 3) {
+                usuarioCumple = true;
+            } else {
+                usuarioCumple = false;
+                user.value = "";
+                usuario.value = "";
+                alert("El usuario debe tener min 4 caracteres, comenzar con una letra mayúscula y tener al menos 3 números en cualquier posición");
+            }
+
+            // validar el password
+            let passwordCumple = false;
+            let regexPassword = /^[0-9].*[A-Z][0-9]$/;
+
+            if (password.match(regexPassword) && password.length > 7) {
+                passwordCumple = true;
+            } else {
+                passwordCumple = false;
+                pass.value = "";
+                password.value = "";
+                alert("El password debe tener una longitud mínima de 8 caracteres, comenzar con un número y terminar con una letra mayúscula seguida de otro número");
+            }
+
+            if (usuarioCumple && passwordCumple) {
+                // datos validos, envia el form
+                form14b.submit();
+                alert("Formulario enviado con éxito.");
+            }
+        });
+    }
+
+    btn14B.addEventListener('click', ejercicio14b);
 
     // }); final para cargar el Js luego del DOM
 });

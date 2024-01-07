@@ -208,7 +208,8 @@ CARROUSEL **********************************************************************
     margin-bottom: 2px;
 }
 
-#SectionCarrousel h2 {
+#SectionCarrousel h2,
+#SectionTemplates h2 {
     font-family: var(--letra-parrafos);
     font-size: 1.2rem;
     color: var(--color-parrafosGrisClaro);
@@ -260,7 +261,8 @@ al contenido pero seguirá siendo un bloque. */
     box-shadow: 10px 10px 15px;
 }
 
-.btnAnterior, .btnSiguiente {
+.btnAnterior,
+.btnSiguiente {
     font-size: 20px;
     position: absolute;
     top: 50%;
@@ -283,8 +285,313 @@ al contenido pero seguirá siendo un bloque. */
     padding: 6px 12px;
 }
 
+/* ***************************************************  MODIFICAR TEMPLATES ******************************************** */
+/* ***************************************************      NOTICIAS        ******************************************** */
+
+#SectionTemplates {
+    width: 100%;
+    padding-bottom: 140px;
+}
+
+/* Estilo original de las noticias */
+#contenedorTemplates {
+    margin-top: 40px;
+    width: min(95%, 950px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 4px var(--color-amarillo);
+    box-shadow: 10px 10px 15px;
+    border-radius: 5px;
+    background-color: var(--color-fondoGrisOscuro);
+    
+}
+
+#btnModificarTemplates {
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-amarillo);
+    padding: 8px;
+    height: 90px;
+    background-color: rgba(100, 99, 99, 0.651);
+    color: yellow;
+    font-weight: 400;
+    transition: transform 0.2s ease;
+    font-weight: 600;
+}
+
+#btnModificarTemplates:hover {
+    background-color: var(--color-amarillo);
+    color: white;
+    transform: scale(0.95);
+}
 
 
+/* Contiene div de noticia principal y div de otras noticas */
+
+#contenedorNoticias {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    width: 100%;
+    background-color: rgb(150, 146, 146);
+
+}
+
+#divNoticiaPrincipal {
+    padding: 10px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    border-top: solid 2px var(--color-amarillo)
+}
+
+
+#NotiPrinStrong,
+#NotiPrinP {
+    font-size: 1.5rem;
+}
+
+#pDetalleNoticiaPrincipal {
+    margin: 12px 0px;
+    font-size: 1.2rem;
+}
+
+#imgNoticiaPrincipal {
+    height: 70%;
+}
+
+/* div con otras noticias */
+.contenedorCardsChicas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+}
+
+#cardNoticia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px 10px 10px;
+    width: 50%;
+    border: solid 2px var(--color-amarillo);
+}
+
+#otraNoticiaP {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+}
+
+.imgNoticias {
+    margin-top: 8px;
+    width: 100%;
+    height: 180px;
+}
+
+
+/* SEGUNDA OPCION DE ESTILOS: para noticias, class agregados con js  */
+
+
+#contenedorTemplatesOpc2 {
+    background-color: #0e081fd3;
+    margin-top: 40px;
+    width: min(95%, 950px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 4px #0e081fd3;
+    box-shadow: 10px 10px 15px;
+    border-radius: 0px;
+}
+
+#btnOpc2 {
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 3px solid #fff;
+    padding: 0px;
+    height: 50px;
+    width: 150px;
+    background-color: #fff;
+    color: #0e081fd3;
+    font-weight: 800;
+    transition: transform 0.2s ease;
+}
+
+#btnOpc2:hover {
+    background-color: #0e081fd3;
+    color: #fff;
+    transform: scale(0.95);
+    font-weight: 800;
+}
+
+#contenedorNoticiasOpc2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    background-color: #fff;
+}
+
+#divNoticiaPrincipalOpc2 {
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-top: 0px;
+}
+
+#NotiPrinPopc2 {
+    font-size: 1.5rem;
+    color: #0e081fd3;
+    font-weight: 600;
+}
+
+#NotiPrinStrongOpc2 {
+    color: red;
+    font-size: 1.5rem;
+}
+
+#pDetalleNoticiaPrincipalOpc2 {
+    margin: 12px 0px;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+#cardNoticiaOpc2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px 10px 10px;
+    width: 50%;
+    border: solid 2px #0e081fd3;
+}
+
+#otraNoticiaPOpc2 {
+    display: flex;
+    flex-wrap: wrap;
+    color: #000;
+    font-size: 1.20rem;
+}
+
+#otraNoticiaStrongOpc2 {
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #0e081fd3;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 3px;
+    margin-bottom: 6px;
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+}
+
+/* TERCERA OPCION DE ESTILOS: para noticias, class agregados con js  */
+
+
+#contenedorTemplatesOpc3 {
+    background-color: rgb(54, 101, 230);
+    margin-top: 40px;
+    width: min(95%, 950px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 4px #000;
+    box-shadow: 10px 10px 15px;
+    border-radius: 15px;
+}
+
+#btnOpc3 {
+    margin-top: 20px;
+    border-radius: 14px;
+    padding: 0px;
+    height: 50px;
+    width: 150px;
+    background-color: #000000ef;
+    color: #fff;
+    font-weight: 800;
+    transition: transform 0.2s ease;
+    box-shadow: 7px 7px 3px #3d3c3c;
+}
+
+#btnOpc3:hover {
+    background-color: rgb(21, 71, 209);
+    color: #fff;
+    transform: scale(0.95);
+    font-weight: 800;
+    border: solid 2px #fff;
+}
+
+#contenedorNoticiasOpc3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    background-color: #000000ef;
+}
+
+#divNoticiaPrincipalOpc3 {
+    margin: 3px 0px 3px 3px;
+
+    padding: 10px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 0px;
+    border: 2px solid rgb(54, 101, 230);
+    border-radius: 13px;
+}
+
+#NotiPrinPopc3 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+#NotiPrinStrongOpc3 {
+    color: rgb(54, 101, 230);
+    font-size: 1.5rem;
+}
+
+#pDetalleNoticiaPrincipalOpc3 {
+    margin: 12px 0px;
+    font-size: 1.1rem;
+    color: rgb(54, 101, 230);
+}
+
+#cardNoticiaOpc3 {
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px 10px 10px;
+    width: 48%;
+    border: 1px solid rgb(54, 101, 230);
+    border-radius: 13px;
+
+}
+
+#otraNoticiaPOpc3 {
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#otraNoticiaStrongOpc3 {
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: rgb(54, 101, 230);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 3px;
+    margin-bottom: 6px;
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+}
 
 
 
@@ -474,11 +781,12 @@ al contenido pero seguirá siendo un bloque. */
     width: 100%;
 }
 
- #divBtnRes9{
+#divBtnRes9 {
     border: none;
     box-shadow: none;
 }
-.div9b{
+
+.div9b {
     border: 0px;
 }
 
@@ -499,64 +807,6 @@ al contenido pero seguirá siendo un bloque. */
     box-shadow: rgba(0, 0, 0, 0.59) 13px 13px 6px;
 }
 
-/* Consigna10b contenedor de los botones */
-.divContenedorBtns10b {
-    border: solid 2px var(--color-amarillo);
-    margin-top: 8px;
-    width: 100%;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    background-color: var(--color-parrafosGrisClaro);
-
-}
-
-.divFilaBtns {
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-    width: auto;
-    justify-content: space-between;
-    border: none;
-    box-shadow: none;
-    background-color: var(--color-parrafosGrisClaro);
-}
-
-/* ultima fila botones calculadora */
-.divFilaBtns5 {
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-    width: auto;
-    border: none;
-    gap: 10px;
-    box-shadow: none;
-    background-color: var(--color-parrafosGrisClaro);
-}
-
-/* Consigna 10b botones calculadora */
-.btnCalculadora {
-    width: 18%;
-    height: 30px;
-    padding: 0px 8px;
-    letter-spacing: 0px;
-    box-shadow: none;
-    background-color: gray;
-    color: yellow;
-    border: none;
-
-}
-
-.btnCalculadoraIgual {
-    width: 59%;
-    height: 30px;
-    padding: 0px 8px;
-    letter-spacing: 0px;
-    box-shadow: none;
-    background-color: gray;
-    color: yellow;
-    border: none;
-}
 
 
 
@@ -884,7 +1134,7 @@ input:focus {
 /* Borde rojo para el campo con error */
 .error {
     border: 2px dashed red;
-   }
+}
 
 
 
