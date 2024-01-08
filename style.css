@@ -296,7 +296,7 @@ al contenido pero seguirá siendo un bloque. */
 /* Estilo original de las noticias */
 #contenedorTemplates {
     margin-top: 40px;
-    width: min(95%, 950px);
+    width: min(95%, 1300px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -309,15 +309,18 @@ al contenido pero seguirá siendo un bloque. */
 
 #btnModificarTemplates {
     margin-top: 10px;
-    border-radius: 50%;
-    border: 2px solid var(--color-amarillo);
-    padding: 8px;
-    height: 90px;
+    border-radius: 0px;
+    border: 3px solid var(--color-amarillo);
+    padding: 3px 30px;
+    height: 40px;
     background-color: rgba(100, 99, 99, 0.651);
     color: yellow;
-    font-weight: 400;
+    box-shadow: 7px 7px 3px #3d3c3c;
+    font-weight: 800;
+    letter-spacing: 1px;
     transition: transform 0.2s ease;
     font-weight: 600;
+    cursor: pointer;
 }
 
 #btnModificarTemplates:hover {
@@ -332,7 +335,7 @@ al contenido pero seguirá siendo un bloque. */
 #contenedorNoticias {
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
+    margin-top: 10px;
     width: 100%;
     background-color: rgb(150, 146, 146);
 
@@ -343,7 +346,8 @@ al contenido pero seguirá siendo un bloque. */
     width: 55%;
     display: flex;
     flex-direction: column;
-    border-top: solid 2px var(--color-amarillo)
+    border-top: solid 3px var(--color-fondoGrisOscuro);
+    border-right: solid 3px var(--color-fondoGrisOscuro);
 }
 
 
@@ -374,7 +378,7 @@ al contenido pero seguirá siendo un bloque. */
     align-items: center;
     padding: 0px 10px 10px 10px;
     width: 50%;
-    border: solid 2px var(--color-amarillo);
+    border: solid 3px var(--color-fondoGrisOscuro);
 }
 
 #otraNoticiaP {
@@ -396,7 +400,7 @@ al contenido pero seguirá siendo un bloque. */
 #contenedorTemplatesOpc2 {
     background-color: #0e081fd3;
     margin-top: 40px;
-    width: min(95%, 950px);
+    width: min(95%, 1300px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -406,16 +410,17 @@ al contenido pero seguirá siendo un bloque. */
 }
 
 #btnOpc2 {
-    margin-top: 20px;
+    margin-top: 8px;
     border-radius: 3px;
     border: 3px solid #fff;
     padding: 0px;
-    height: 50px;
+    height: 40px;
     width: 150px;
     background-color: #fff;
     color: #0e081fd3;
     font-weight: 800;
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 #btnOpc2:hover {
@@ -428,17 +433,17 @@ al contenido pero seguirá siendo un bloque. */
 #contenedorNoticiasOpc2 {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     background-color: #fff;
 }
 
 #divNoticiaPrincipalOpc2 {
     padding: 10px;
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    border-top: 0px;
+    border-top: #0e081fd3 solid 2px;
 }
 
 #NotiPrinPopc2 {
@@ -493,7 +498,7 @@ al contenido pero seguirá siendo un bloque. */
 #contenedorTemplatesOpc3 {
     background-color: rgb(54, 101, 230);
     margin-top: 40px;
-    width: min(95%, 950px);
+    width: min(95%, 1300px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -503,22 +508,24 @@ al contenido pero seguirá siendo un bloque. */
 }
 
 #btnOpc3 {
-    margin-top: 20px;
+    margin-top: 8px;
     border-radius: 14px;
     padding: 0px;
-    height: 50px;
+    height: 43px;
     width: 150px;
     background-color: #000000ef;
     color: #fff;
     font-weight: 800;
     transition: transform 0.2s ease;
     box-shadow: 7px 7px 3px #3d3c3c;
+    border: none;
+    cursor: pointer;
 }
 
 #btnOpc3:hover {
     background-color: rgb(21, 71, 209);
     color: #fff;
-    transform: scale(0.95);
+    transform: scale(0.90);
     font-weight: 800;
     border: solid 2px #fff;
 }
@@ -526,7 +533,7 @@ al contenido pero seguirá siendo un bloque. */
 #contenedorNoticiasOpc3 {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 8px;
     width: 100%;
     background-color: #000000ef;
 }
