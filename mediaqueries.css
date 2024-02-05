@@ -242,8 +242,13 @@
     .contenedorCardsChicas{
         width: 100%;
         justify-content: center;
+        flex-direction: column;
+
     }
-   
+
+    #cardNoticia, #cardNoticiaOpc2, #cardNoticiaOpc3{
+        width: 100%;
+    }
 }
 
 /* MEDIA PARA CARROUSEL IMAGENES CEL EN VERTICAL */
@@ -321,13 +326,6 @@
 }
 
 @media (max-width: 576px){
-    /* ESTILOS INDEX TEMPLATES NOTICIAS */
-    .contenedorCardsChicas{
-        flex-direction: column;
-    }
-
-    #cardNoticia, #cardNoticiaOpc2, #cardNoticiaOpc3{
-        width: 100%;
-    }
+  
 
 }
