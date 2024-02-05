@@ -165,6 +165,87 @@
 
 }
 
+  /* *************************************************      MAS FUNCIONES   ************************************************ */
+
+  @media (max-width: 768px) {
+
+    /* div contenedor de msjs de error */
+    .divMensaje {
+        width: min(420px, 85%);
+    }
+
+    PARA MENU HAMBURGUESA
+
+    /* SECTION DE MAS FUNCIONES */
+    .sectionGeneral {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 40px;
+    }
+
+    .sectionGeneral h1 {
+        width: 90%;
+    }
+
+    .sectionGeneral div {
+        width: 92%;
+    }
+
+    #divBtnRes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnsMasFunciones {
+        width: 95%;
+        padding: 0
+    }
+
+    .pResultado {
+        width: 95%;
+    }
+
+    /* tabla en resoluciones chicas */
+    .div9 {
+        padding: 15px 0;
+    }
+
+    .div9 h3 {
+        padding-left: 20px;
+    }
+
+    #divBtnRes9 {
+        width: 100%;
+    }
+
+    .p9 {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Consigba 10b segunda imagen de messi al pasar el mouse por la primera */
+    .messiResponsive2 {
+        background-size: cover;
+    }
+
+
+    /* ESTILOS INDEX TEMPLATES DE NOTICIAS */
+    #contenedorNoticias, #contenedorNoticiasOpc2, #contenedorNoticiasOpc3{
+        flex-direction: column;
+    }
+
+    #divNoticiaPrincipal, #divNoticiaPrincipalOpc2, #divNoticiaPrincipalOpc3{
+        width: 100%;
+    }
+
+    .contenedorCardsChicas{
+        width: 100%;
+        justify-content: center;
+    }
+   
+}
+
 /* MEDIA PARA CARROUSEL IMAGENES CEL EN VERTICAL */
 @media (max-width: 721px) {
 
@@ -234,76 +315,19 @@
     .btnSiguiente {
         right: 15%;
     }
+  
 
 
+}
 
-    /* *************************************************      MAS FUNCIONES   ************************************************ */
-
-    @media (max-width: 768px) {
-
-        /* div contenedor de msjs de error */
-        .divMensaje {
-            width: min(420px, 85%);
-        }
-
-        PARA MENU HAMBURGUESA
-
-        /* SECTION DE MAS FUNCIONES */
-        .sectionGeneral {
-            width: 100%;
-            padding: 0;
-            padding-bottom: 40px;
-        }
-
-        .sectionGeneral h1 {
-            width: 90%;
-        }
-
-        .sectionGeneral div {
-            width: 92%;
-        }
-
-        #divBtnRes {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .btnsMasFunciones {
-            width: 95%;
-            padding: 0
-        }
-
-        .pResultado {
-            width: 95%;
-        }
-
-        /* tabla en resoluciones chicas */
-        .div9 {
-            padding: 15px 0;
-        }
-
-        .div9 h3 {
-            padding-left: 20px;
-        }
-
-        #divBtnRes9 {
-            width: 100%;
-        }
-
-        .p9 {
-            width: 100%;
-            padding: 0;
-        }
-
-        /* Consigba 10b segunda imagen de messi al pasar el mouse por la primera */
-        .messiResponsive2 {
-            background-size: cover;
-        }
-
-
-
+@media (max-width: 576px){
+    /* ESTILOS INDEX TEMPLATES NOTICIAS */
+    .contenedorCardsChicas{
+        flex-direction: column;
     }
 
+    #cardNoticia, #cardNoticiaOpc2, #cardNoticiaOpc3{
+        width: 100%;
+    }
 
 }
